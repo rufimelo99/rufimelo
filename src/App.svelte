@@ -18,11 +18,11 @@
 
 <div class="text">
 	<span style="opacity: {1 - Math.max(0, y / 40)}">
-		scroll down
+		what's up boi??????
 	</span>
 
 	<div class="foreground">
-		You have scrolled {y} pixels
+		You have scrolled {y} fucking pixels
 	</div>
 </div>
 
