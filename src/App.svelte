@@ -1,7 +1,3 @@
-<div>
-	You have scrolled hii pixels
-</div>
-<!-- 
 <script>
 	const layers = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
@@ -90,4 +86,3 @@
 		background-color: rgb(253, 174, 51);
 	}
 </style>
--->
