@@ -107,3 +107,7 @@ Then, from within your project folder:
 npm run build
 surge public my-project.surge.sh
 ```
+
+
+# Perosnal Build (also add to deploy later i think)
+npm i svelte-parallax

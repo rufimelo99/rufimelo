@@ -1,90 +1,69 @@
 <script>
-	const layers = [0, 1, 2, 3, 4, 5, 6, 7, 8];
-
-	let y;
+	import { Parallax, ParallaxLayer} from 'svelte-parallax'
+	let disabled = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+	
+	let parallax;
+	
+	import Button from './Components/Button.svelte'
+	
+	const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 </script>
 
-<svelte:window bind:scrollY={y}/>
+<Parallax sections=3 style="background-color: #253237;" {disabled} bind:this={parallax}>
+	<ParallaxLayer offset=0  rate=1 >
+	<ParallaxLayer offset=0 rate=0 span=6 style="background-image: { url('stars', true) }; background-size: cover;"/>	
+	</ParallaxLayer>
+	<ParallaxLayer offset=0  rate=1.5>
+		<img src="assets/p0.png" alt="">
+	</ParallaxLayer>
+	<ParallaxLayer offset=0  rate=1.4>
+		<img src="assets/p1.png" alt="">
+	</ParallaxLayer>
+	<ParallaxLayer offset=0  rate=1.3>
+		<img src="assets/p2.png" alt="">
+	</ParallaxLayer>
+	<ParallaxLayer offset=0  rate=1.2>
+		<img src="assets/p3.png" alt="">
+	</ParallaxLayer>
+	<ParallaxLayer offset=0  rate=1.1>
+		<img src="assets/p4.png" alt="">
+	</ParallaxLayer>
+	<ParallaxLayer offset=0  rate=1.0>
+		<img src="assets/p5.png" alt="">
+	</ParallaxLayer>
+	<ParallaxLayer offset=0  rate=0.9>
+		<img src="assets/p6.png" alt="">
+	</ParallaxLayer>
+	<ParallaxLayer offset=0  rate=0.8>
+		<img src="assets/p7.png" alt="">
+	</ParallaxLayer>
+	
+	<ParallaxLayer offset=1.3  rate=-0.3>
+		<img src={url('satellite4')} alt='' style="width: 15%; margin-left: 70%;">
+	</ParallaxLayer>
+	<ParallaxLayer offset=2 rate=-0 style="display: flex; align-items: center; justify-content: center;">
+	  <a  href="https://drive.google.com/file/d/131qxcViy4HeMCobGHX6Tjh9KbQZtlpYb/view?usp=sharing">
+		<img 
+		  src=assets/cv.png 
+		  alt='' 
+		  class="clients-main" 
+		  style="width: 100%;" 
+		tabindex=0
+	  ></a>
+  </ParallaxLayer>
+	<ParallaxLayer offset=1  rate=1>
+		<Button name={"hello"}></Button>
+	</ParallaxLayer>
+</Parallax>
 
-<a class="parallax-container" href="" >
-	{#each [0, 1, 2, 3, 4, 5, 6, 7] as layer}
-		<img
-			style="transform: translate(0,{-y * layer / (layers.length - 1)}px)"
-			src="assets/p{layer}.png"
-			alt="parallax layer {layer}"
-		>
-	{/each}
-</a>
-
-<div class="text">
-	<span style="opacity: {1 - Math.max(0, y / 40)}">
-		what's up boi??????
-	</span>
-
-	<div class="foreground">
-		What about no?
-
-		Ass. Rui Melo
-	</div>
-</div>
 
 <style>
-	.parallax-container {
-		position: fixed;
-		width: 2400px;
-		height: 712px;
-		left: 50%;
-		transform: translate(-50%,0);
-	}
-
-	.parallax-container img {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		will-change: transform;
-	}
-
-	.parallax-container img:last-child::after {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background: rgb(45,10,13);
-	}
-
-	.text {
-		position: relative;
-		width: 100%;
-		height: 300vh;
-		color: rgb(220,113,43);
-		text-align: center;
-		padding: 4em 0.5em 0.5em 0.5em;
-		box-sizing: border-box;
-		pointer-events: none;
-	}
-
-	span {
-		display: block;
-		font-size: 1em;
-		text-transform: uppercase;
-		will-change: transform, opacity;
-	}
-
-	.foreground {
-		position: absolute;
-		top: 711px;
-		left: 0;
-		width: 100%;
-		height: calc(100% - 712px);
-		background-color: rgb(32,0,1);
-		color: white;
-		padding: 50vh 0 0 0;
-	}
-
 	:global(body) {
-		margin: 0;
 		padding: 0;
-		background-color: rgb(253, 174, 51);
 	}
+
+	img{
+		width: 100%;
+	}
+
 </style>
