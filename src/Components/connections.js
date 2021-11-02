@@ -1,4 +1,4 @@
-export function draggable(node) { 
+export function connections(node) { 
 	//last known coords
 	let lastX;
 	let lastY;
@@ -8,11 +8,13 @@ export function draggable(node) {
 		lastY = event.clientY;
 		event.preventDefault();
 		event.stopPropagation();
-		node.dispatchEvent(new CustomEvent("dragstart", {
+		node.dispatchEvent(new CustomEvent("connectionStart", {
 			detail: { lastX, lastY }
 		}));
 		window.addEventListener("mousemove", handleMousemove);
 		window.addEventListener("mouseup", handleMouseup);
+		//added now
+		window.addEventListener("mousedown", handleDoubleClick);	
 	}
 	function handleMousemove(event){
 	 	const dx = event.clientX - lastX;
@@ -20,7 +22,7 @@ export function draggable(node) {
 		lastX = event.clientX;
 		lastY = event.clientY;
 		event.preventDefault();
-		node.dispatchEvent(new CustomEvent("dragmove", {
+		node.dispatchEvent(new CustomEvent("connectionDrag", {
 			detail: { lastX, lastY, dx, dy }
 		}));
 	}
@@ -28,11 +30,24 @@ export function draggable(node) {
 		lastX = event.clientX;
 		lastY = event.clientY;
 		event.preventDefault();
-		node.dispatchEvent(new CustomEvent("dragend", {
+		node.dispatchEvent(new CustomEvent("connectionEnd", {
 		detail: { lastX, lastY }
 		}));
 		window.removeEventListener("mousemove", handleMousemove);
 		window.removeEventListener("mouseup", handleMouseup);
+	}
+	function handleDoubleClick(event){
+		//added now
+		lastX = event.clientX;
+		lastY = event.clientY;
+		event.preventDefault();
+		node.dispatchEvent(new CustomEvent("connectionEnd", {
+		detail: { lastX, lastY }
+		}));
+		
+		window.removeEventListener("mousemove", handleMousemove);
+		window.removeEventListener("mouseup", handleMouseup);
+		
 	}
 	node.addEventListener("mousedown", handleMousedown);
 	return {

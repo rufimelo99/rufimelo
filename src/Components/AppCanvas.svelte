@@ -1,79 +1,17 @@
 <script>
     import Canvas from './Canvas.svelte'
-    //import { Module, Port, Connection, Chart } from './StructureLogic';
-    import Button from './Button.svelte'
-	
+    import { Module, Port, Connection, Chart } from './StructureLogic';
+    import Button from './Button.svelte';
     import { createEventDispatcher} from 'svelte';
+    import { ChartHistory} from './stores';
 
     const dispatch = createEventDispatcher();
 
 
+    let ChartStruc = new Chart("Resumé");
 
-   
-    //need to initialize vars -> it would not work if after loaded, the diagram was not moved
-    let Background_dxInitial = -3000;
-    let Background_dyInitial = -3000;
-    let Background_dx;
-    let Background_dy;
-    let SpawnX=-Background_dxInitial+600;
-    let SpawnY=-Background_dxInitial+600;
+    let __HistoryChart = new ChartHistory();
 
-    const handleBackGroundMovement = (e) => {
-        Background_dx = e.detail.Background_dx.Background_dx;
-        Background_dy = e.detail.Background_dy.Background_dy;
-        SpawnX = -Background_dx+400;
-        SpawnY = -Background_dy+400;
-    }
-    function saveAsToFile(filename, chart){
-        var json = ChartStruc.toJSON();
-
-        fs.writeFile(filename, json, (err) => {
-            if(err){
-                alert("An error ocurred creating the file ")
-                dispatch('error', {
-                    message: "An error ocurred creating the file "
-                });
-            }else{
-                alert("File Saved Correctly");
-
-                let filenameSplited=filename.split('.');
-                let file=filenameSplited[0];
-                let ProjectName=file.split('/').pop();
-                let ProjectPath=filename;
-                dispatch('fileWasSavedCorrectly', {
-                    ProjectName: {ProjectName},
-                    ProjectPath: {ProjectPath}
-                });
-            }
-
-        });
-    }
-
-    export function addXModule(ModuleToBeAdded){
-        __HistoryChart.addState(ChartStruc.toJSON());
-
-        ModuleToBeAdded.setXPos(SpawnX);
-        ModuleToBeAdded.setYPos(SpawnY);
-        ModuleToBeAdded.adjustOwnProperties();
-        ChartStruc.findIdealModuleId(0);
-        ModuleToBeAdded.id=ChartStruc.nextModuleID;
-        ChartStruc.ModuleList.push(ModuleToBeAdded);
-        ChartStruc.ModuleList=ChartStruc.ModuleList;
-        let chartToBePassed = ChartStruc;
-    }
-    export function saveProject(filename){
-        saveAsToFile(filename, ChartStruc);
-    }
-
-
-    // My Version
-    export function trySaveProjectToFile(){
-        const {dialog} = require("electron").remote;
-        let filename = dialog.showSaveDialogSync({filters: [{name:'json', extensions:['json']}]})
-        saveAsToFile(filename, ChartStruc);
-    }
-
-    
     export function tryToLoadProject(){
         const {dialog} = require("electron").remote;
         let filename = dialog.showSaveDialogSync()
@@ -133,7 +71,7 @@
                                 let InputObject  = ModulesList[i].inputList[json.Modules[i].Connections.Inputs[j].InputPort];
                                 let InputModule  = ModulesList[i];
 
-                                let OutputModule = ModulesList[json.Modules[i].Connections.Inputs[j].ModuleID];
+                                let OutputModule  = ModulesList[json.Modules[i].Connections.Inputs[j].ModuleID];
                                 let OutputObject  = OutputModule.outputList[json.Modules[i].Connections.Inputs[j].ModulePort];
 
                                 let connection = new Connection('connectionX', InputObject, true, InputModule);
@@ -170,59 +108,16 @@
             }
                 }
     }
-    export function newProject(){
-        ChartStruc= new Chart("NewProject");
-
-        __HistoryChart.clear();
-
-        dispatch('newProjectInitiated');
-    }
 
     let myCanvas;
 
-
-    export function redo(){
-        //console.log("before redo")
-        //console.log(__HistoryChart)
-        let newstate =__HistoryChart.redo(ChartStruc);
-        if(newstate){
-            ChartStruc.loadJSON(newstate);
-            for(let moduleEntry of ChartStruc.ModuleList){
-                moduleEntry.setPortCoords();
-            }ChartStruc.ModuleList=ChartStruc.ModuleList
-        }
-        ChartStruc=ChartStruc;
-
-        //console.log("after redo")
-        //console.log(__HistoryChart)
-    }
-    export function undo(){
-        //console.log("before undo")
-        //console.log(__HistoryChart)
-        let newstate =__HistoryChart.undo(ChartStruc);
-        if(newstate){
-            ChartStruc.loadJSON(newstate);
-            for(let moduleEntry of ChartStruc.ModuleList){
-                moduleEntry.setPortCoords();
-            }ChartStruc.ModuleList=ChartStruc.ModuleList
-        }
-        ChartStruc=ChartStruc;
-
-        //console.log("after undo")
-        //console.log(__HistoryChart)
-    }
     export function handleWrongTypes(){
         dispatch("wrongTypes");
     }
-    const hello = (e) => {   
-        alert('yooooo');   
-    }
+
 </script>
-    <Button on:click={hello}  name={"hello there"}></Button>
     <Canvas bind:this={myCanvas}
-        on:BackgroundMovement={handleBackGroundMovement}
         on:wrongTypes={handleWrongTypes}
-        
-        Background_dx={-3000}
-        Background_dy={-3000}
+        ChartStruc={ChartStruc}
+        {__HistoryChart}
         />

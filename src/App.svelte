@@ -1,15 +1,21 @@
 <script>
 	import { Parallax, ParallaxLayer} from 'svelte-parallax'
+	
 	let disabled = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	
 	let parallax;
-	
-	import Button from './Components/Button.svelte'
-	import PersonalDescription from './Components/PersonalDescription.svelte'
-	import TemporaryCanvas from './Components/TemporaryCanvas.svelte'
-	
 	//https://svelte.dev/repl/1504d411044745a186004855521a89c7?version=3.35.0
 	const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
+	
+
+	import Button from './Components/Button.svelte'
+	import PersonalDescription from './Components/PersonalDescription.svelte'
+	import AppCanvas from './Components/AppCanvas.svelte'
+	import Canvas from './Components/Canvas.svelte'
+	
+
+	let myAppCanvas;
+	
 </script>
 
 <Parallax sections=4 style="background-color: #253237;" {disabled} bind:this={parallax}>
@@ -63,9 +69,8 @@
   </ParallaxLayer>
 
   <ParallaxLayer offset=2  rate=1>
-	  <TemporaryCanvas>
-
-	  </TemporaryCanvas>
+	<AppCanvas
+		bind:this={myAppCanvas}></AppCanvas>
   </ParallaxLayer>
 
 	<ParallaxLayer offset=3 rate=-0 style="display: flex; align-items: center; justify-content: center;">

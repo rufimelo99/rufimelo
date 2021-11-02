@@ -1,8 +1,20 @@
 <script>
     import {draggable} from './draggable'
     import ModuleHeader from './ModuleHeader.svelte'
+    import ModuleContent from './ModuleContent.svelte'
 
-    export let xPos, yPos, moduleWidth, moduleHeight;
+    
+    
+    import { createEventDispatcher} from 'svelte';
+    const dispatch = createEventDispatcher(); 
+    
+    export let StrucModule;
+
+    $:xPos = StrucModule.xPos;
+    $:yPos = StrucModule.yPos;
+    $:moduleName = StrucModule.name;
+    $:moduleWidth = StrucModule.getModuleWidth();
+    $:moduleHeight = StrucModule.getModuleHeight();
     
     //if i want to access rect from component's parent (chart) -> add export
     let rect;
@@ -16,6 +28,42 @@
     let lastdy = 0;
 
  
+	const handleConnectionStart = (e) => {
+        //console.log("FlowModulev2 -> connection start handler")
+        let {xInitial, xFinal, yInitial, yFinal, port} = e.detail;
+        dispatch('handleConnectionStart', {
+                    xInitial: {xInitial},
+                    xFinal: {xFinal},
+                    yInitial: {yInitial},
+                    yFinal: {yFinal},
+                    port: {port},
+                    parentModule : {StrucModule}
+                });
+		
+    }   
+	const handleConnectionDrag = (e) => {
+        let {xInitial, xFinal, yInitial, yFinal, port} = e.detail;
+        dispatch('handleConnectionDrag', {
+                    xInitial: {xInitial},
+                    xFinal: {xFinal},
+                    yInitial: {yInitial},
+                    yFinal: {yFinal},
+                    port: {port},
+                    parentModule : {StrucModule}
+                });
+		
+    }
+	const handleConnectionEnd = (e) => {
+        let {xInitial, xFinal, yInitial, yFinal, port} = e.detail;
+        dispatch('handleConnectionEnd', {
+                    xInitial: {xInitial},
+                    xFinal: {xFinal},
+                    yInitial: {yInitial},
+                    yFinal: {yFinal},
+                    port: {port},
+                    parentModule : {StrucModule}
+                });
+    }
     const handleDragStart = (e) => {
         rect.setAttribute('stroke', '#E7DFDD');
         rect.setAttribute('stroke-width', '10px');
@@ -28,8 +76,7 @@
         StrucModule.yPos=yPos+dy-lastdy;
         dx=0;
         dy=0;
-        //console.log("FlowModulev2 -> xPos:"+xPos+" ; yPos:"+yPos)
-        //console.log("FlowModulev2 -> dx:"+dx+" ; dy:"+dy)
+        
         
         dispatch('handleDragMove', {    
                     Module: {StrucModule},
@@ -59,7 +106,6 @@
 
 
     const handleDblClick = (e) => {
-        //console.log("FlowModulev2 -> Modulo clickado")
         dispatch('DblclickModule', {
             moduleClicked: StrucModule
                 });
@@ -68,11 +114,6 @@
 transform={`translate(${dx} ${dy})`}
 on:dblclick={handleDblClick}>    
 <rect
-    use:draggable  
-    on:dragmove={handleDragMove}
-    on:dragstart={handleDragStart}   
-    on:dragend={handleDragEnd}
-     
     bind:this={rect} 
     class="node-background" 
     x={xPos} 
@@ -83,6 +124,20 @@ on:dblclick={handleDblClick}>
     ry="6" 
     />	
     
+    <g use:draggable  
+        on:dragmove={handleDragMove}
+        on:dragstart={handleDragStart}   
+        on:dragend={handleDragEnd}
+            ><ModuleHeader
+        StrucModule={StrucModule}
+        />
+    </g>
+    <ModuleContent
+        StrucModule={StrucModule}
+    on:handleConnectionStart={handleConnectionStart}
+    on:handleConnectionDrag={handleConnectionDrag}
+    on:handleConnectionEnd={handleConnectionEnd}
+    />
  
 </g>
 <style>
