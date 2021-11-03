@@ -303,7 +303,6 @@
 <g>      
     <MyModule
     StrucModule={Aveiro} 
-    headerColor={}
     on:handleDragEnd={handleDragEnd}
     on:handleDragMove={handleDragMove}
     /> 
