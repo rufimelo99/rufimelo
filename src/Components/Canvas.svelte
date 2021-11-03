@@ -1,35 +1,17 @@
 <script>
-    //import FlowModulev2 from './FlowModulev2.svelte'
-    //import ConnectionSVG from './ConnectionSVG.svelte'
-    
-    //import { Module, Port, Connection, Chart } from './StructureLogic';
-    //import { spring } from 'svelte/motion';
-	import {draggable} from '../Scripts/draggable'
+    import MyModule from './Module.svelte';
+    import ConnectionSVG from './ConnectionSVG.svelte'
+    //Classes
+    import { Module, Port, Connection, Chart } from './StructureLogic';
     import { createEventDispatcher} from 'svelte';
     const dispatch = createEventDispatcher();
 
     export let ChartStruc;
-    //export let __HistoryChart;
-
+    console.log(ChartStruc);
     //TODO allow dragging the chart --> need to chage values here and send it somehow to the modules so handlers can work properly
     let dx = 0;
     let dy = 0;
 
-    // if Background_dx & dy is changed, it represents the ammount of space that is already dragged from the background(canvas)
-    export let Background_dx;
-    export let Background_dy;
-    
-	const handleDragMoveBackground = (e) => {
-		let { dx: _dx, dy: _dy } = e.detail;
-		dx += _dx;
-        dy += _dy;
-        Background_dx += _dx;
-        Background_dy += _dy;
-        dispatch('BackgroundMovement', {
-                    Background_dx: {Background_dx},
-                    Background_dy: {Background_dy}
-                });
-	}
 
     //ggotta be global and export from app maybe.. so other "apps" can access
     var connections=[];
@@ -114,8 +96,6 @@
 
     //TODO posso nao tar sempre a criar e dar simplesment update as ligacoes
     const handleDragEnd = (e) => {
-        //History
-        __HistoryChart.addState(ChartStruc.toJSON());
         
     }
 	const handleDragMove = (e) => {
@@ -154,188 +134,220 @@
             ChartStruc.FinalConnections=ChartStruc.FinalConnections;
         }
     }
-	const handleConnectionStart = (e) => {
-        let {xInitial, xFinal, yInitial, yFinal, port, parentModule} = e.detail;
-        //TODO id da conexao dinamicamente
-        let connection = new Connection('tentativa', port.port.port.port, port.port.port.port.isInput, parentModule.StrucModule);
-        connection.setEndPoints(xFinal.xFinal.xFinal-Background_dx-left, yFinal.yFinal.yFinal-Background_dy-top);
-        connection.calculateCurve();
-        connections.push(connection);
-        connections=connections;
-        
-    }
-	const handleConnectionDrag = (e) => {
-        let {xInitial, xFinal, yInitial, yFinal, port, parentModule} = e.detail;
-        connections=[];
-        //TODO id da conexao dinamicamente
-        let connection = new Connection('tentativa', port.port.port.port, port.port.port.port.isInput, parentModule.StrucModule);
-        connection.setEndPoints( xFinal.xFinal.xFinal-Background_dx-left, yFinal.yFinal.yFinal-Background_dy-top);
-        connection.calculateCurve();
-        connections.push(connection);
-        connections=connections;
-    }
-	const handleConnectionEnd = (e) => {
-        let {xInitial, xFinal, yInitial, yFinal, port, parentModule} = e.detail;
-        connections=[];
-        verifyCoordsIsPortFromType(xFinal.xFinal.xFinal-Background_dx-left, yFinal.yFinal.yFinal-Background_dy-top, port.port.port.port, parentModule.StrucModule);
+    
+    const Aveiro =new Module(1, "University of Aveiro, Aveiro", 100, 100);
+    const AveiroInput0 = new Port(true,"September","2017");
+    const AveiroOutput0 = new Port(false,"September","2020");
+    const AveiroOutput1 = new Port(false,"Bachelor's Degree","Software Engenieering");
+    Aveiro.addInputs([AveiroInput0]);
+    Aveiro.addOutputs([AveiroOutput0,AveiroOutput1]);  
+    Aveiro.setModuleWidth();
+    Aveiro.setModuleHeight();
+    Aveiro.setPortCoords();
 
-    }
-	const handleDblClickConnection = (e) => {
-        //History
-        __HistoryChart.addState(ChartStruc.toJSON());
+    const IST =new Module(1, "Instituto Superior Técnico, Lisbon", 1200, 100);
+    const ISTInput0 = new Port(true,"September","2020");
+    const ISTOutput0 = new Port(false,"February","2023");
+    const ISTOutput1 = new Port(false,"Master's Degree","Software Engenieering");
+    const ISTOutput2 = new Port(false,"Major","Artificial Intelligence");
+    const ISTOutput3 = new Port(false,"Major","Game Development");
+    const ISTOutput4 = new Port(false,"Minor","Computational Mathematics Applied to Finance");
+    IST.addInputs([ISTInput0]);
+    IST.addOutputs([ISTOutput0,ISTOutput1,ISTOutput2,ISTOutput3,ISTOutput4]);  
+    IST.setModuleWidth();
+    IST.setModuleHeight();
+    IST.setPortCoords();
 
-        for(let i=0; i<ChartStruc.ModuleList.length; i++){
-            
-            //retirar conexao do modulo pai
-            if(ChartStruc.ModuleList[i].connectionsInputs !== undefined){
-                for(let j=0; j<ChartStruc.ModuleList[i].connectionsInputs.length; j++){
-                    if(ChartStruc.ModuleList[i].connectionsInputs[j].Connection == e.detail.connectionClicked){
-                        ChartStruc.ModuleList[i].connectionsInputs.splice(j, 1);
-                        ChartStruc.ModuleList[i].connectionsInputs=ChartStruc.ModuleList[i].connectionsInputs;
-                    }
-                }
-            }
-            //retirar conexao do modulo externo
-            if(ChartStruc.ModuleList[i].connectionsOutputs !== undefined){
-                for(let j=0; j<ChartStruc.ModuleList[i].connectionsOutputs.length; j++){
-                    if(ChartStruc.ModuleList[i].connectionsOutputs[j].Connection == e.detail.connectionClicked){
-                        ChartStruc.ModuleList[i].connectionsOutputs.splice(j, 1);
-                        ChartStruc.ModuleList[i].connectionsOutputs=ChartStruc.ModuleList[i].connectionsOutputs;
-                    }
-                }
-            }
-        }
+    const NEI =new Module(1, "Núcleo de Estudantes", 500, 400);
+    const NEIInput0 = new Port(true,"November","2018");
+    const NEIOutput0 = new Port(false,"February","2019");
+    const NEIOutput1 = new Port(false,"External","Collaborator");
+    NEI.addInputs([NEIInput0]);
+    NEI.addOutputs([NEIOutput0,NEIOutput1]);  
+    NEI.setModuleWidth();
+    NEI.setModuleHeight();
+    NEI.setPortCoords();
 
-        //retirr do Final connextions do canvas que é o que representa graficamente
-        let index = ChartStruc.FinalConnections.indexOf(e.detail.connectionClicked);
-        if (index > -1) {
-            ChartStruc.FinalConnections.splice(index, 1);
-        }
-        ChartStruc.FinalConnections=ChartStruc.FinalConnections;
-
-	}
-	const handleDblClickModule = (e) => {
-        //History
-        __HistoryChart.addState(ChartStruc.toJSON());
-
-        let moduleClicked = e.detail.moduleClicked;
-        let moduleClickedInputConnections = e.detail.moduleClicked.connectionsInputs;
-        let moduleClickedOutputConnections = e.detail.moduleClicked.connectionsOutputs;
-        let moduleList = ChartStruc.ModuleList;
-        let finalConnections = ChartStruc.FinalConnections;
+    const PrimeIT =new Module(1, "Prime IT", 50, 450);
+    const PrimeITInput0 = new Port(true,"November","2018");
+    const PrimeITOutput0 = new Port(false,"July","2019");
+    const PrimeITOutput1 = new Port(false,"Prime College","Ambassador");
+    PrimeIT.addInputs([PrimeITInput0]);
+    PrimeIT.addOutputs([PrimeITOutput0,PrimeITOutput1]);  
+    PrimeIT.setModuleWidth();
+    PrimeIT.setModuleHeight();
+    PrimeIT.setPortCoords();
 
 
+    const ESN =new Module(1, "Erasmus Student Network", 200, 700);
+    const ESNInput0 = new Port(true,"September","2018");
+    const ESNOutput0 = new Port(false,"January","2020");
+    ESN.addInputs([ESNInput0]);
+    ESN.addOutputs([ESNOutput0]);  
+    ESN.setModuleWidth();
+    ESN.setModuleHeight();
+    ESN.setPortCoords();
 
-        //se tem ligacoes nos inputs
-        if(moduleClickedInputConnections){
-            for(let a=0; a<moduleClickedInputConnections.length; a++){
-                //cannot  go inside details of connections inputs like external module-> return undefineds              
-                for(let i=0; i<moduleList.length; i++){
-                    //retirar conexao do modulo externo
-                    if(moduleList[i].connectionsOutputs !== undefined){
-                        for(let j=0; j<moduleList[i].connectionsOutputs.length; j++){
-                            if(moduleList[i].connectionsOutputs[j].Connection == moduleClickedInputConnections[a].Connection){
-                                moduleList[i].connectionsOutputs.splice(j, 1);
-                                moduleList[i].connectionsOutputs=moduleList[i].connectionsOutputs;
-                            }
-                        }
-                    }
-                }
-               //delete from final connections
-                let index = finalConnections.indexOf(moduleClickedInputConnections[a].Connection);
-                if (index > -1) {
-                    finalConnections.splice(index, 1);
-                }
+    const CSW =new Module(1, "Critical Software", 1100, 500);
+    const CSWInput0 = new Port(true,"July","2021");
+    const CSWOutput0 = new Port(false,"August","2021");
+    const CSWOutput1 = new Port(false,"Summer","Intern");
+    CSW.addInputs([CSWInput0]);
+    CSW.addOutputs([CSWOutput0,CSWOutput1]);  
+    CSW.setModuleWidth();
+    CSW.setModuleHeight();
+    CSW.setPortCoords();
 
 
-            }
-        }
+    ChartStruc.addModule(Aveiro)
+    ChartStruc.addModule(IST)
+    ChartStruc.addModule(NEI)
+    ChartStruc.addModule(PrimeIT)
+    ChartStruc.addModule(ESN)
+    ChartStruc.addModule(CSW)
+    
 
 
 
-        //se tem ligacoes nos outputs\
-        if(moduleClickedOutputConnections){
-            for(let a=0; a<moduleClickedOutputConnections.length; a++){
-                //cannot  go inside details of connections inputs like external module-> return undefineds
-                for(let i=0; i<moduleList.length; i++){
-                    //retirar conexao do modulo externo
-                    if(moduleList[i].connectionsInputs !== undefined){
-                        
-                        for(let j=0; j<moduleList[i].connectionsInputs.length; j++){
-                            if(moduleList[i].connectionsInputs[j].Connection == moduleClickedOutputConnections[a].Connection){
-                                moduleList[i].connectionsInputs.splice(j, 1);
-                                moduleList[i].connectionsInputs=moduleList[i].connectionsInputs;
-                            }
-                        }
-                    }
-                }
+    let connection = new Connection("1", ISTInput0, ISTInput0.isInput, IST); 
+    connection.setConnectedPort(AveiroOutput0, Aveiro);
+    //inputmodule
+    //InternalPort: Port, ExternalPort: Port, ExternalNode: Module, Connection: Connection)
+    IST.addInputConnection(ISTInput0, AveiroOutput0, Aveiro ,connection);
+    //outputmodule
+    //InternalPort: Port, ExternalPort: Port, ExternalNode: Module, Connection: Connection
+    Aveiro.addOutputConnection(AveiroOutput0, ISTInput0, IST ,connection);
 
-                //delete from final connections
-                let index = finalConnections.indexOf(moduleClickedOutputConnections[a].Connection);
-                if (index > -1) {
-                    finalConnections.splice(index, 1);
-                }finalConnections=finalConnections;
-        
-            }
-        }
-        
-        
-        //ChartStruc.ModuleList.forEach(function(m){console.log(`${m.id}=${m.xPos},${m.yPos}`)})
-        for(let i=0; i<moduleList.length; i++){
+    connection.calculateCurve();     
+    ChartStruc.FinalConnections.push(connection);
 
-            if(moduleList[i].id == moduleClicked.id){
-                moduleList.splice(i, 1);
-                break;
-            }
-        }
-        
-        ChartStruc=ChartStruc;
+    ////////////////////////////
 
-        
-    }
+    connection = new Connection("2", NEIInput0, NEIInput0.isInput, NEI); 
+    connection.setConnectedPort(AveiroInput0, Aveiro);
+    NEI.addInputConnection(NEIInput0, AveiroInput0, Aveiro ,connection);
+    Aveiro.addOutputConnection(AveiroInput0, NEIInput0, NEI ,connection);
+    connection.calculateCurve();     
+    ChartStruc.FinalConnections.push(connection);
+
+    ////////////////////////////
+
+    connection = new Connection("3", NEIOutput0, NEIOutput0.isInput, NEI); 
+    connection.setConnectedPort(AveiroOutput0, Aveiro);
+    NEI.addInputConnection(NEIOutput0, AveiroOutput0, Aveiro ,connection);
+    Aveiro.addOutputConnection(AveiroOutput0, NEIOutput0, NEI ,connection);
+    connection.calculateCurve();     
+    ChartStruc.FinalConnections.push(connection);
+    ////////////////////////////
+
+    connection = new Connection("4", PrimeITInput0, PrimeITInput0.isInput, PrimeIT); 
+    connection.setConnectedPort(AveiroInput0, Aveiro);
+    PrimeIT.addInputConnection(PrimeITInput0, AveiroInput0, Aveiro ,connection);
+    Aveiro.addOutputConnection(AveiroInput0, PrimeITInput0, PrimeIT ,connection);
+    connection.calculateCurve();     
+    ChartStruc.FinalConnections.push(connection);
+
+    ////////////////////////////
+
+    connection = new Connection("5", PrimeITOutput0, PrimeITOutput0.isInput, PrimeIT); 
+    connection.setConnectedPort(AveiroOutput0, Aveiro);
+    PrimeIT.addInputConnection(PrimeITOutput0, AveiroOutput0, Aveiro ,connection);
+    Aveiro.addOutputConnection(AveiroOutput0, PrimeITOutput0, PrimeIT ,connection);
+    connection.calculateCurve();     
+    ChartStruc.FinalConnections.push(connection);
+    ////////////////////////////
+
+    connection = new Connection("6", ESNInput0, ESNInput0.isInput, ESN); 
+    connection.setConnectedPort(AveiroInput0, Aveiro);
+    ESN.addInputConnection(ESNInput0, AveiroInput0, Aveiro ,connection);
+    Aveiro.addOutputConnection(AveiroInput0, ESNInput0, ESN ,connection);
+    connection.calculateCurve();     
+    ChartStruc.FinalConnections.push(connection);
+
+    ////////////////////////////
+
+    connection = new Connection("7", ESNOutput0, ESNOutput0.isInput, ESN); 
+    connection.setConnectedPort(AveiroOutput0, Aveiro);
+    ESN.addInputConnection(ESNOutput0, AveiroOutput0, Aveiro ,connection);
+    Aveiro.addOutputConnection(AveiroOutput0, ESNOutput0, ESN ,connection);
+    connection.calculateCurve();     
+    ChartStruc.FinalConnections.push(connection);
+    ////////////////////////////
+
+    connection = new Connection("8", CSWOutput0, CSWOutput0.isInput, CSW); 
+    connection.setConnectedPort(ISTInput0, IST);
+    CSW.addInputConnection(CSWOutput0, ISTInput0, IST ,connection);
+    IST.addOutputConnection(ISTInput0, CSWOutput0, CSW ,connection);
+    connection.calculateCurve();     
+    ChartStruc.FinalConnections.push(connection);
+
+    ////////////////////////////
+
+    connection = new Connection("9", CSWInput0, CSWInput0.isInput, CSW); 
+    connection.setConnectedPort(AveiroOutput0, Aveiro);
+    CSW.addInputConnection(CSWInput0, AveiroOutput0, Aveiro ,connection);
+    Aveiro.addOutputConnection(AveiroOutput0, CSWInput0, CSW ,connection);
+
+    connection.calculateCurve();     
+    ChartStruc.FinalConnections.push(connection);
 
 
+
+    ChartStruc.FinalConnections=ChartStruc.FinalConnections;
 
 
 </script>
-
-<svg    use:draggable  
-        on:dragmove={handleDragMoveBackground}
-        transform={`translate(${Background_dx} ${Background_dy})`} >
-    <g>
-        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" /></g>
-	<!--<g>      
-            {#each ChartStruc.ModuleList as moduleEntry}
-                <FlowModulev2
-                    StrucModule={moduleEntry} 
-                    on:handleDragEnd={handleDragEnd}
-                    on:handleDragMove={handleDragMove}
-                    on:handleConnectionStart={handleConnectionStart}
-                    on:handleConnectionDrag={handleConnectionDrag}
-                    on:handleConnectionEnd={handleConnectionEnd}
-                    on:DblclickModule={handleDblClickModule}
-                /> 
-            {/each}
-            {#each connections as connection,i (i)}
-                <path d={connection.curve} fill="transparent"/>
-            {/each}
-            {#each ChartStruc.FinalConnections as connection,i (i)}
-                <ConnectionSVG 
-                    on:DblclickConnection={handleDblClickConnection}
-                    connection={connection}
-                    />
-            {/each}
-            
-    </g>-->
+    
+    <svg
+    >
+<g>      
+    <MyModule
+    StrucModule={Aveiro} 
+    headerColor={}
+    on:handleDragEnd={handleDragEnd}
+    on:handleDragMove={handleDragMove}
+    /> 
+    <MyModule
+    StrucModule={IST} 
+    on:handleDragEnd={handleDragEnd}
+    on:handleDragMove={handleDragMove}
+    /> 
+    <MyModule
+    StrucModule={NEI} 
+    on:handleDragEnd={handleDragEnd}
+    on:handleDragMove={handleDragMove}
+    /> 
+    <MyModule
+    StrucModule={PrimeIT} 
+    on:handleDragEnd={handleDragEnd}
+    on:handleDragMove={handleDragMove}
+    /> 
+    <MyModule
+    StrucModule={ESN} 
+    on:handleDragEnd={handleDragEnd}
+    on:handleDragMove={handleDragMove}
+    /> 
+    <MyModule
+    StrucModule={CSW} 
+    on:handleDragEnd={handleDragEnd}
+    on:handleDragMove={handleDragMove}
+    /> 
+    
+    {#each ChartStruc.FinalConnections as connection,i (i)}
+        <ConnectionSVG 
+            connection={connection}
+            />
+    {/each}
+        
+</g>
 </svg>
+
 <style>
     svg{
         background-color:#b3b3b3;
         width: 100%; 
         height: 100%;
-        z-index: 10;
     }
-
     path{
         stroke-width: 5;
         stroke-opacity: 0.5;
