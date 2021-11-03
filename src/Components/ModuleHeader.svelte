@@ -31,7 +31,7 @@
 
 <style>
     .node-header {
-	fill: rgb(23, 218, 201);
+	fill: rgb(58, 58, 58);
 	}
 	.node-header .header-title {
 	font-size: 20px;

@@ -30,54 +30,15 @@
 	port.yPos=parseInt(yPos)+10+50+(25*portNumber);
 	port.id=portNumber;
 	port=port;
-	//console.log("cx: "+port.xPos)
-	//console.log("cyRealValue: "+port.yPos)
-	//console.log("portNumber: "+port.id)
 
-	//console.log("FlowModuleINputv2 -->  port")
-	//console.log(port)
 
-	const handleConnectionStart = (e) => { 
-		let {lastX, lastY} = e.detail
-		dispatch('handleConnectionStart', {
-                    xInitial: cx,
-                    xFinal: lastX,
-                    yInitial: cyRealValue,
-                    yFinal: lastY,
-					port: {port}
-                });
-
-    }
-	const handleConnectionDrag = (e) => {
-		let {lastX, lastY, dx, dy} = e.detail
-		dispatch('handleConnectionDrag', {
-			xInitial: cx,
-			xFinal: lastX,
-			yInitial: cyRealValue,
-			yFinal: lastY,
-			port: {port}
-		});
-	}
-	const handleConnectionEnd = (e) => {
-		let {lastX, lastY, dx, dy} = e.detail
-		dispatch('handleConnectionEnd', {
-			xInitial: cx,
-			xFinal: lastX,
-			yInitial: cyRealValue,
-			yFinal: lastY,
-			port: {port}
-		});
-	}
+	
 </script>
 
 
 
 <g class="input-field" transform="translate(0, {transformValue})">
-	<g class="port"
-                use:connections
-				on:connectionDrag={handleConnectionDrag}
-				on:connectionStart={handleConnectionStart}
-				on:connectionEnd={handleConnectionEnd}>
+	<g class="port">
 		<circle class="port-outer" cx={cx} cy={cy} r="7.5" />
 		<circle class="port-inner" cx={cx} cy={cy} r="5" />
 		<circle class="port-scrim" cx={cx} cy={cy} r="7.5" />

@@ -20,40 +20,7 @@
     $:contentRectX = xPos+2;
     $:contentRectY = yPos+44;//40 is the header size... can make it a attribute later //TODO
 
-    
-	const handleConnectionStart = (e) => {
-        let {xInitial, xFinal, yInitial, yFinal, port} = e.detail;
-        dispatch('handleConnectionStart', {
-                    xInitial: {xInitial},
-                    xFinal: {xFinal},
-                    yInitial: {yInitial},
-                    yFinal: {yFinal},
-                    port: {port}
-                });
-		
-    }          
-	const handleConnectionDrag = (e) => {
-        let {xInitial, xFinal, yInitial, yFinal, port} = e.detail;
-        dispatch('handleConnectionDrag', {
-                    xInitial: {xInitial},
-                    xFinal: {xFinal},
-                    yInitial: {yInitial},
-                    yFinal: {yFinal},
-                    port: {port}
-                });
-		
-    }       
-	const handleConnectionEnd = (e) => {
-        let {xInitial, xFinal, yInitial, yFinal, port} = e.detail;
-        dispatch('handleConnectionEnd', {
-                    xInitial: {xInitial},
-                    xFinal: {xFinal},
-                    yInitial: {yInitial},
-                    yFinal: {yFinal},
-                    port: {port}
-                });
-		
-    }
+
 	
 </script>
 
@@ -66,10 +33,7 @@
             <ModuleInput
                 port={item}
                 portNumber={i} 
-                StrucModule={StrucModule} 
-                on:handleConnectionStart={handleConnectionStart}
-                on:handleConnectionDrag={handleConnectionDrag}
-                on:handleConnectionEnd={handleConnectionEnd}/>
+                StrucModule={StrucModule} />
         {/each}
     </g>
     
@@ -79,10 +43,7 @@
             <ModuleOutput
                 port={item}
                 portNumber={i} 
-                StrucModule={StrucModule} 
-                on:handleConnectionStart={handleConnectionStart}
-                on:handleConnectionDrag={handleConnectionDrag}
-                on:handleConnectionEnd={handleConnectionEnd}/>
+                StrucModule={StrucModule} />
         {/each}  
     </g>
     

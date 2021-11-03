@@ -4,16 +4,9 @@ export let connection;
 import { createEventDispatcher} from 'svelte';
 const dispatch = createEventDispatcher();
 
-const handleDblClick = (e) => {
-        dispatch('DblclickConnection', {
-            connectionClicked: connection
-                });
-}
 </script>
 
-
-
-<path d={connection.curve} on:dblclick={handleDblClick} fill="transparent"/>
+<path d={connection.curve} fill="transparent"/>
 <!--<circle cx={connection.parentPort.xPos} cy={connection.parentPort.yPos} r="5" />
 <circle cx={connection.externalPort.xPos} cy={connection.externalPort.yPos} r="5" />-->
 
