@@ -14,8 +14,8 @@ const handleDblClick = (e) => {
 
 
 <path d={connection.curve} on:dblclick={handleDblClick} fill="transparent"/>
-<circle cx={connection.parentPort.xPos} cy={connection.parentPort.yPos} r="5" />
-<circle cx={connection.externalPort.xPos} cy={connection.externalPort.yPos} r="5" />
+<!--<circle cx={connection.parentPort.xPos} cy={connection.parentPort.yPos} r="5" />
+<circle cx={connection.externalPort.xPos} cy={connection.externalPort.yPos} r="5" />-->
 
 <style>
 

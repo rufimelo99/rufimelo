@@ -52,15 +52,16 @@
 	</ParallaxLayer>
 
 	<!--Flating images behing-->
-	<ParallaxLayer offset=0.99  rate=2>
-		<img src=favicon.png  alt='' style="width: 15%; margin-right: 60%;margin-left: 20%;">
-	</ParallaxLayer>
+
 
 	<ParallaxLayer offset=1.3  rate=-0.3>
 		<img src=assets/basketball.gif  alt='' style="width: 15%; margin-left: 80%;">
 	</ParallaxLayer>
-	<ParallaxLayer offset=1.1  rate=1.5>
-		<img src=favicon.png  alt='' style="width: 15%; margin-right: 60%;margin-left: 20%;">
+	<ParallaxLayer offset=0.99  rate=-0.4>
+		<img src=assets/ist.png  alt='' style="width: 15%; margin-right: 70%;margin-left: 10%;">
+	</ParallaxLayer>	
+	<ParallaxLayer offset=1.5  rate=1.6>
+		<img src=assets/ua.png  alt='' style="width: 25%; margin-right: 30%;margin-left: 50%;">
 	</ParallaxLayer>
 	<!------------------------------>
 
@@ -83,31 +84,33 @@
 		tabindex=0
 		></a>
 	</ParallaxLayer>
-	
-	<ParallaxLayer offset=3  rate=0>
+	<ParallaxLayer offset=3  rate=1.8>
 		<a href="https://github.com/rufimelo99">
 			<img 
 				src=assets/git.png 
 				alt='' 
-				style="width: 100px; height: 100px; margin-left: 5%;" 
+				style="width: 15%; margin-left: 80%;" 
 			tabindex=0
 			></a>
+	</ParallaxLayer>	
+	<ParallaxLayer offset=3.4  rate=1.1>
 		<a href="https://www.linkedin.com/in/rui--melo/">
 			<img 
 				src=assets/linkedin.png 
 				alt='' 
-				style="width: 100px; height: 100px; margin-left: calc(6%+100px);" 
+				style="width: 15%; margin-right: 70%;margin-left: 10%;" 
 			tabindex=0
 			></a>
-		<a href="mailto:rufimelo99@gmail.com">
-			<img 
-				src=assets/gmail.svg 
-				alt='' 
-				style="width: 100px; height: 100px; margin-left: calc(7%+200px);" 
-			tabindex=0
-			></a>
-		
 	</ParallaxLayer>
+			<!--
+			<a href="mailto:rufimelo99@gmail.com">
+				<img 
+					src=assets/gmail.svg 
+					alt='' 
+					style="width: 100px; height: 100px; margin-left: calc(7%+200px);" 
+				tabindex=0
+			></a>-->
+		
 	<ParallaxLayer offset=3.95 rate=0>
 		<p class="ownership" >
 			I do not own the art from Fire Watch or Codepen
