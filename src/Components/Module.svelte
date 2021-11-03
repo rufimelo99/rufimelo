@@ -3,8 +3,6 @@
     import ModuleHeader from './ModuleHeader.svelte'
     import ModuleContent from './ModuleContent.svelte'
 
-    
-    
     import { createEventDispatcher} from 'svelte';
     const dispatch = createEventDispatcher(); 
     
@@ -16,6 +14,8 @@
     $:moduleWidth = StrucModule.getModuleWidth();
     $:moduleHeight = StrucModule.getModuleHeight();
     
+    export let headerColor;
+
     //if i want to access rect from component's parent (chart) -> add export
     let rect;
 
@@ -130,6 +130,7 @@ on:dblclick={handleDblClick}>
         on:dragend={handleDragEnd}
             ><ModuleHeader
         StrucModule={StrucModule}
+        color={headerColor}
         />
     </g>
     <ModuleContent

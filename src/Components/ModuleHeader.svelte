@@ -21,9 +21,10 @@
     $:headerRectX = StrucModule.xPos;
     $:headerRectY = StrucModule.yPos;
 
+    export let color;
 </script>
 
-<g class="node-header">
+<g class="node-header" style="fill:{color}">
     <rect class="header-round-rect" width={moduleWidth} height="40" x={xPosHeader} y={yPosHeader} rx="4" ry="4" />
     <rect class="header-rect" width={moduleWidth} height="36" x={headerRectX} y={headerRectY} />
     <text class="header-title" x={headerTitleX} y={headerTitleY}>{moduleName}</text>

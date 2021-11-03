@@ -139,21 +139,23 @@
     const AveiroInput0 = new Port(true,"September","2017");
     const AveiroOutput0 = new Port(false,"September","2020");
     const AveiroOutput1 = new Port(false,"Bachelor's Degree","Software Engenieering");
+    const AveiroOutput2 = new Port(false,"Experience"," ");
     Aveiro.addInputs([AveiroInput0]);
-    Aveiro.addOutputs([AveiroOutput0,AveiroOutput1]);  
+    Aveiro.addOutputs([AveiroOutput0,AveiroOutput1,AveiroOutput2]);  
     Aveiro.setModuleWidth();
     Aveiro.setModuleHeight();
     Aveiro.setPortCoords();
 
-    const IST =new Module(1, "Instituto Superior Técnico, Lisbon", 1200, 100);
+    const IST =new Module(1, "Instituto Superior Técnico, Lisbon", 900, 100);
     const ISTInput0 = new Port(true,"September","2020");
     const ISTOutput0 = new Port(false,"February","2023");
     const ISTOutput1 = new Port(false,"Master's Degree","Software Engenieering");
     const ISTOutput2 = new Port(false,"Major","Artificial Intelligence");
     const ISTOutput3 = new Port(false,"Major","Game Development");
     const ISTOutput4 = new Port(false,"Minor","Computational Mathematics Applied to Finance");
+    const ISTOutput5 = new Port(false,"Experience"," ");
     IST.addInputs([ISTInput0]);
-    IST.addOutputs([ISTOutput0,ISTOutput1,ISTOutput2,ISTOutput3,ISTOutput4]);  
+    IST.addOutputs([ISTOutput0,ISTOutput1,ISTOutput2,ISTOutput3,ISTOutput4,ISTOutput5]);  
     IST.setModuleWidth();
     IST.setModuleHeight();
     IST.setPortCoords();
@@ -224,69 +226,43 @@
     ////////////////////////////
 
     connection = new Connection("2", NEIInput0, NEIInput0.isInput, NEI); 
-    connection.setConnectedPort(AveiroInput0, Aveiro);
-    NEI.addInputConnection(NEIInput0, AveiroInput0, Aveiro ,connection);
-    Aveiro.addOutputConnection(AveiroInput0, NEIInput0, NEI ,connection);
+    connection.setConnectedPort(AveiroOutput2, Aveiro);
+    NEI.addInputConnection(NEIInput0, AveiroOutput2, Aveiro ,connection);
+    Aveiro.addOutputConnection(AveiroOutput2, NEIInput0, NEI ,connection);
     connection.calculateCurve();     
     ChartStruc.FinalConnections.push(connection);
 
     ////////////////////////////
 
-    connection = new Connection("3", NEIOutput0, NEIOutput0.isInput, NEI); 
-    connection.setConnectedPort(AveiroOutput0, Aveiro);
-    NEI.addInputConnection(NEIOutput0, AveiroOutput0, Aveiro ,connection);
-    Aveiro.addOutputConnection(AveiroOutput0, NEIOutput0, NEI ,connection);
-    connection.calculateCurve();     
-    ChartStruc.FinalConnections.push(connection);
-    ////////////////////////////
 
     connection = new Connection("4", PrimeITInput0, PrimeITInput0.isInput, PrimeIT); 
-    connection.setConnectedPort(AveiroInput0, Aveiro);
+    connection.setConnectedPort(AveiroOutput2, Aveiro);
     PrimeIT.addInputConnection(PrimeITInput0, AveiroInput0, Aveiro ,connection);
-    Aveiro.addOutputConnection(AveiroInput0, PrimeITInput0, PrimeIT ,connection);
+    Aveiro.addOutputConnection(AveiroOutput2, AveiroOutput2, PrimeIT ,connection);
     connection.calculateCurve();     
     ChartStruc.FinalConnections.push(connection);
 
     ////////////////////////////
 
-    connection = new Connection("5", PrimeITOutput0, PrimeITOutput0.isInput, PrimeIT); 
-    connection.setConnectedPort(AveiroOutput0, Aveiro);
-    PrimeIT.addInputConnection(PrimeITOutput0, AveiroOutput0, Aveiro ,connection);
-    Aveiro.addOutputConnection(AveiroOutput0, PrimeITOutput0, PrimeIT ,connection);
-    connection.calculateCurve();     
-    ChartStruc.FinalConnections.push(connection);
-    ////////////////////////////
 
     connection = new Connection("6", ESNInput0, ESNInput0.isInput, ESN); 
-    connection.setConnectedPort(AveiroInput0, Aveiro);
-    ESN.addInputConnection(ESNInput0, AveiroInput0, Aveiro ,connection);
-    Aveiro.addOutputConnection(AveiroInput0, ESNInput0, ESN ,connection);
+    connection.setConnectedPort(AveiroOutput2, Aveiro);
+    ESN.addInputConnection(ESNInput0, AveiroOutput2, Aveiro ,connection);
+    Aveiro.addOutputConnection(AveiroOutput2, ESNInput0, ESN ,connection);
     connection.calculateCurve();     
     ChartStruc.FinalConnections.push(connection);
 
     ////////////////////////////
 
-    connection = new Connection("7", ESNOutput0, ESNOutput0.isInput, ESN); 
-    connection.setConnectedPort(AveiroOutput0, Aveiro);
-    ESN.addInputConnection(ESNOutput0, AveiroOutput0, Aveiro ,connection);
-    Aveiro.addOutputConnection(AveiroOutput0, ESNOutput0, ESN ,connection);
-    connection.calculateCurve();     
-    ChartStruc.FinalConnections.push(connection);
-    ////////////////////////////
 
     connection = new Connection("8", CSWOutput0, CSWOutput0.isInput, CSW); 
-    connection.setConnectedPort(ISTInput0, IST);
-    CSW.addInputConnection(CSWOutput0, ISTInput0, IST ,connection);
-    IST.addOutputConnection(ISTInput0, CSWOutput0, CSW ,connection);
+    connection.setConnectedPort(ISTOutput5, IST);
+    CSW.addInputConnection(CSWOutput0, ISTOutput5, IST ,connection);
+    IST.addOutputConnection(ISTOutput5, CSWOutput0, CSW ,connection);
     connection.calculateCurve();     
     ChartStruc.FinalConnections.push(connection);
 
-    ////////////////////////////
 
-    connection = new Connection("9", CSWInput0, CSWInput0.isInput, CSW); 
-    connection.setConnectedPort(AveiroOutput0, Aveiro);
-    CSW.addInputConnection(CSWInput0, AveiroOutput0, Aveiro ,connection);
-    Aveiro.addOutputConnection(AveiroOutput0, CSWInput0, CSW ,connection);
 
     connection.calculateCurve();     
     ChartStruc.FinalConnections.push(connection);
@@ -295,7 +271,6 @@
 
     ChartStruc.FinalConnections=ChartStruc.FinalConnections;
 
-
 </script>
     
     <svg
@@ -303,31 +278,37 @@
 <g>      
     <MyModule
     StrucModule={Aveiro} 
+    headerColor={'rgb(146, 212, 0)'}
     on:handleDragEnd={handleDragEnd}
     on:handleDragMove={handleDragMove}
     /> 
     <MyModule
     StrucModule={IST} 
+    headerColor={'rgb(0, 157, 224)'}
     on:handleDragEnd={handleDragEnd}
     on:handleDragMove={handleDragMove}
     /> 
     <MyModule
     StrucModule={NEI} 
+    headerColor={'rgb(13,135,62)'}
     on:handleDragEnd={handleDragEnd}
     on:handleDragMove={handleDragMove}
     /> 
     <MyModule
     StrucModule={PrimeIT} 
+    headerColor={'rgb(84,229,13)'}
     on:handleDragEnd={handleDragEnd}
     on:handleDragMove={handleDragMove}
     /> 
     <MyModule
     StrucModule={ESN} 
+    headerColor={'rgb(46,49,146)'}
     on:handleDragEnd={handleDragEnd}
     on:handleDragMove={handleDragMove}
     /> 
     <MyModule
     StrucModule={CSW} 
+    headerColor={'rgb(192,23,34)'}
     on:handleDragEnd={handleDragEnd}
     on:handleDragMove={handleDragMove}
     /> 

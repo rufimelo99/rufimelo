@@ -1,7 +1,5 @@
 <div class="grid-container">
-    <div class="personalPhotoGrid">
-        <img src="assets/me.jpg" alt='' class="personalPhoto">
-    </div>
+    <div></div>
     <div class="description">
     <h1>
         Hello there!
@@ -16,25 +14,28 @@
         I'm very passionate about <span class="texthighlighted">Artificial Intelligence</span> and Games Development. I always try to learn more and improve each day in everything I do from programming to playing sports.I played basketball for 10 years and so, it is one of my passions.
     </p>
     </div>
+    <div class="personalPhotoGrid">
+        <img src="assets/Melo.jpeg" alt='' class="personalPhoto">
+    </div>
 </div>
 <style>
     .description{
         color: rgb(119, 168, 180);
         font-family: 'opensans-regular', sans-serif;
+        font-size: 15px;
     }
     .grid-container{
         display: grid;
-        grid-template-columns: 30% 50% 20% ;
+        grid-template-columns: 10% 60% 30% ;
         align-content: center;
-        font-size:x-large;
     }
     .personalPhotoGrid{
         text-align: center;
     }
     .personalPhoto{
-        height: 80%; 
-        width: 80%; 
-        border-radius: 50%;
+        height: 100%; 
+        width: 100%; 
+        /*border-radius: 50%;*/
     }
     .texthighlighted{
         color: rgb(123, 229, 255);
