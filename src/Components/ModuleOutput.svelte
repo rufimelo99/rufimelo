@@ -1,6 +1,6 @@
 <script>
-    import { Module, Port, Connection } from './StructureLogic';
-	import { connections } from './connections';
+    import { Module, Port, Connection } from '../Scripts/StructureLogic';
+	import { connections } from '../Scripts/connections';
     
     import { createEventDispatcher} from 'svelte'; 	
     const dispatch = createEventDispatcher();
