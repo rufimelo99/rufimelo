@@ -1,5 +1,6 @@
 <script>
     export let name;
+    export let id;
     let maxLength = 16;
     let displayName = " ";
 
@@ -10,7 +11,7 @@
         displayName = name;
     }
 </script>
-<button type="button" class="btn btn-info"  on:click>
+<button type="button"  id={id} on:click>
     {displayName}
 </button>
 <style>
@@ -21,7 +22,6 @@
         background-color: #27948e;
         color:white;
         border:black;
-        width:160px;
         height: 50px;
         padding-top: 15px;
         z-index: 1;
@@ -33,7 +33,6 @@
         background-color: rgb(108, 183, 245);
         color:white;
         border:black;
-        width:160px;
         height: 50px;
         padding-top: 15px;
         z-index: 1;

@@ -1,5 +1,5 @@
 <script >
-import { Connection } from './StructureLogic';
+import { Module, Port, Connection } from '../Scripts/StructureLogic';
 export let connection;
 import { createEventDispatcher} from 'svelte';
 const dispatch = createEventDispatcher();
