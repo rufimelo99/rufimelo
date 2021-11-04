@@ -1,7 +1,7 @@
 <script>
     import ModuleInput from './ModuleInput.svelte';
     import ModuleOutput from './ModuleOutput.svelte';
-    import { Module, Port, Connection } from '../Scripts/StructureLogic';
+    import { Module, Port, Connection } from './StructureLogic';
     import { createEventDispatcher} from 'svelte';
     const dispatch = createEventDispatcher();
        

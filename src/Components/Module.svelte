@@ -1,5 +1,5 @@
 <script>
-    import {draggable} from '../Scripts/draggable'
+    import {draggable} from './draggable'
     import ModuleHeader from './ModuleHeader.svelte'
     import ModuleContent from './ModuleContent.svelte'
 

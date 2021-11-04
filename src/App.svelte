@@ -14,13 +14,10 @@
 	import AppCanvas from './Components/AppCanvas.svelte'
 	import Canvas from './Components/Canvas.svelte'
 	import Header from './Components/Header.svelte'
-	import Footer from './Components/Footer.svelte'
 	
 
 	let myAppCanvas;
-
-	import AppNavSkills from './Components/AppNavSkills.svelte';
-
+	
 </script>
 
 <Parallax sections=2 {disabled} bind:this={parallax}>
@@ -28,6 +25,8 @@
 	<ParallaxLayer offset=0  rate=1 >
 
 	
+	<ParallaxLayer offset=0 rate=0 span=4 style="background-image: { url('stars', true) }; background-size: cover;"/>	
+	</ParallaxLayer>
 	
 	<!--Parallax Cover-->
 	<ParallaxLayer offset=0  rate=1.7 span=1.5>
@@ -55,8 +54,6 @@
 		<img src="assets/p7.png" alt="">
 	</ParallaxLayer>
 
-	<ParallaxLayer offset=-0.5 rate=0 span=6 class="stars" style="background-image: url('/assets/stars.svg'); background-size: cover;"/>	
-	</ParallaxLayer>
 
 	<ParallaxLayer offset=0.99 rate=1.2>
 		<img src="assets/hellothere.png" alt="">
@@ -88,15 +85,10 @@
 		class="Canvas"
 		bind:this={myAppCanvas}></AppCanvas>
 
-		<Header
+  	<Header
 		title={"Skills"}
 		body={""}>
-		</Header>
-	<AppNavSkills>
-	</AppNavSkills>
-
-	<Footer>
-  	</Footer>
+	</Header>
 
 <!--
 	<ParallaxLayer offset=4  rate=1.8>
@@ -137,7 +129,6 @@
 
 
 <style>
-
 	.ownership{
 		padding-right: 2%;
 		text-align: end;
@@ -152,8 +143,6 @@
 	:global(body) {
 		padding: 0;
     	background-color: #000000;
-		background-image: url('/assets/stars.svg');
-		background-size: cover;
 	}
 
 	img{

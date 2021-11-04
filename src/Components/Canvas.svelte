@@ -2,7 +2,7 @@
     import MyModule from './Module.svelte';
     import ConnectionSVG from './ConnectionSVG.svelte'
     //Classes
-    import { Module, Port, Connection, Chart } from '../Scripts/StructureLogic';
+    import { Module, Port, Connection, Chart } from './StructureLogic';
     import { createEventDispatcher} from 'svelte';
     const dispatch = createEventDispatcher();
 
@@ -273,7 +273,8 @@
 
 </script>
     
-    <svg>
+    <svg
+    >
 <g>      
     <MyModule
     StrucModule={Aveiro} 
@@ -322,7 +323,6 @@
 </svg>
 
 <style>
-    
     svg{
         background-color:#b3b3b3;
         width: 100%; 
