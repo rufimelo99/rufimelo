@@ -124,21 +124,22 @@ on:dblclick={handleDblClick}>
     ry="6" 
     />	
     
-    <g use:draggable  
+    <g  use:draggable  
         on:dragmove={handleDragMove}
         on:dragstart={handleDragStart}   
         on:dragend={handleDragEnd}
-            ><ModuleHeader
-        StrucModule={StrucModule}
-        color={headerColor}
+        >
+        <ModuleHeader
+            StrucModule={StrucModule}
+            color={headerColor}
+        />
+        <ModuleContent
+            StrucModule={StrucModule}
+            on:handleConnectionStart={handleConnectionStart}
+            on:handleConnectionDrag={handleConnectionDrag}
+            on:handleConnectionEnd={handleConnectionEnd}
         />
     </g>
-    <ModuleContent
-        StrucModule={StrucModule}
-    on:handleConnectionStart={handleConnectionStart}
-    on:handleConnectionDrag={handleConnectionDrag}
-    on:handleConnectionEnd={handleConnectionEnd}
-    />
  
 </g>
 <style>

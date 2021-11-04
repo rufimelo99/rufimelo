@@ -20,77 +20,77 @@
 	
 </script>
 
-<Parallax sections=5 style="background-color: #253237;" {disabled} bind:this={parallax}>
+<Parallax sections=2 {disabled} bind:this={parallax}>
+	<!--Stars-->	
 	<ParallaxLayer offset=0  rate=1 >
 
-	<!--Stars-->	
-	<ParallaxLayer offset=0 rate=0 span=10 style="background-image: { url('stars', true) }; background-size: cover;"/>	
+	
+	<ParallaxLayer offset=0 rate=0 span=4 style="background-image: { url('stars', true) }; background-size: cover;"/>	
 	</ParallaxLayer>
 	
 	<!--Parallax Cover-->
-	<ParallaxLayer offset=0  rate=1.7>
+	<ParallaxLayer offset=0  rate=1.7 span=1.5>
 		<img src="assets/p0.png" alt="">
 	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.55>
+	<ParallaxLayer offset=0  rate=1.55 span=1.5>
 		<img src="assets/p1.png" alt="">
 	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.4>
+	<ParallaxLayer offset=0  rate=1.4 span=1.5>
 		<img src="assets/p2.png" alt="">
 	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.25>
+	<ParallaxLayer offset=0  rate=1.25 span=1.5>
 		<img src="assets/p3.png" alt="">
 	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.10>
+	<ParallaxLayer offset=0  rate=1.10 span=1.5>
 		<img src="assets/p4.png" alt="">
 	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.0>
+	<ParallaxLayer offset=0  rate=1.0 span=1.5>
 		<img src="assets/p5.png" alt="">
 	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=0.9>
+	<ParallaxLayer offset=0  rate=0.9 span=1.5>
 		<img src="assets/p6.png" alt="">
 	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=0.8>
+	<ParallaxLayer offset=0  rate=0.8 span=1.5>
 		<img src="assets/p7.png" alt="">
 	</ParallaxLayer>
 
-	<!--Floating images behing (Tecnico,UA and Basketball) + About Me Sectioon-->
-	<ParallaxLayer offset=0.99  rate=-0.4>
-		<img src=assets/ist.png  alt='' style="width: 15%; margin-right: 70%;margin-left: 10%;">
+
+	<ParallaxLayer offset=0.99 rate=1.2>
+		<img src="assets/hellothere.png" alt="">
 	</ParallaxLayer>
+
+
+	<!--Floating images behing (Tecnico,UA and Basketball) + About Me Sectioon-->
 	<ParallaxLayer offset=1  rate=1>
 		<PersonalDescription></PersonalDescription>
 	</ParallaxLayer>
-	<!--<ParallaxLayer offset=1.1  rate=-0.3>
-		<img src=assets/basketball.gif  alt='' style="width: 15%; margin-left: 80%;">
-	</ParallaxLayer>	-->
-	<ParallaxLayer offset=1.5  rate=1.6>
+	<ParallaxLayer offset=1.5  rate=1.7>
+		<img src=assets/ist.png  alt='' style="width: 15%; margin-right: 70%;margin-left: 10%;">
+	</ParallaxLayer>
+	<ParallaxLayer offset=1.6  rate=1.6>
 		<img src=assets/ua.png  alt='' style="width: 25%; margin-right: 30%;margin-left: 50%;">
 	</ParallaxLayer>
 	<!------------------------------>
 
+</Parallax>
+
 	<!--CV-->
-  <ParallaxLayer offset=2 rate=1>
 	<Header
 		title={"Interactive CV"}
 		body={"(Feel free to move things around)"}>
 
 	</Header>
-  </ParallaxLayer>
-  <ParallaxLayer offset=2.2  rate=1>
 	<AppCanvas
+	
+		class="Canvas"
 		bind:this={myAppCanvas}></AppCanvas>
-  </ParallaxLayer>
 
-	<!--Tech-->
-
-  <ParallaxLayer offset=3 rate=1>
-	<Header
+  	<Header
 		title={"Skills"}
 		body={""}>
 	</Header>
-  </ParallaxLayer>
 
-
+<!--
 	<ParallaxLayer offset=4  rate=1.8>
 		<a href="https://github.com/rufimelo99">
 			<img 
@@ -118,21 +118,14 @@
 		tabindex=0
 		></a>
 	</ParallaxLayer>
-	<!--
-	<a href="mailto:rufimelo99@gmail.com">
-		<img 
-			src=assets/gmail.svg 
-			alt='' 
-			style="width: 100px; height: 100px; margin-left: calc(7%+200px);" 
-		tabindex=0
-	></a>-->
+
 		
 	<ParallaxLayer offset=4.95 rate=0>
 		<p class="ownership" >
 			I do not own the art from Fire Watch or Codepen
 		</p>
 	</ParallaxLayer>
-</Parallax>
+-->
 
 
 <style>
@@ -141,12 +134,15 @@
 		text-align: end;
 		text-align: right;    
 		color: rgb(119, 168, 180);
-        font-family: 'opensans-regular', sans-serif;
+        font-family: sans-serif;
     
 	}
-
+	.Canvas{
+		width:50%;
+	}
 	:global(body) {
 		padding: 0;
+    	background-color: #000000;
 	}
 
 	img{
