@@ -1,7 +1,7 @@
 <script>
     export let name;
     export let id;
-    let maxLength = 16;
+    let maxLength = 50;
     let displayName = " ";
 
 
