@@ -23,7 +23,7 @@
                 <span style="text-align: center;">Oct 2021 – Nov 2021</span>
             </div>
         </div>
-        <div class="gridProject">
+        <div class="gridProject container">
             <div class="row" style="padding-bottom:4vh">
                 <img src="assets/ua.png" alt="">
             </div>
@@ -38,7 +38,7 @@
             </div>
         </div>
         
-        <div class="gridProject">
+        <div class="gridProject container">
             <div class="row" style="padding-bottom:4vh">
                 <img src="assets/ua.png" alt="">
             </div>
@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="gridProject">
+        <div class="gridProject container">
             <div class="row" style="padding-bottom:4vh">
                 <img src="assets/ua.png" alt="">
             </div>
@@ -67,7 +67,7 @@
                 <span style="text-align: center;">May 2021 – Jun 2021</span>
             </div>
         </div>
-        <div class="gridProject">
+        <div class="gridProject container">
             <div class="row" style="padding-bottom:4vh">
                 <img src="assets/ua.png" alt="">
             </div>
@@ -81,7 +81,7 @@
                 <span style="text-align: center;">Dec 2020 - Jan 2021</span>
             </div>
         </div>
-        <div class="gridProject">
+        <div class="gridProject container">
             <div class="row" style="padding-bottom:4vh">
                 <img src="assets/ua.png" alt="">
             </div>
@@ -112,7 +112,6 @@
      width: 100%;
 	 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	 grid-gap: 1rem;
-     
 }
  .grid > div {
 	 background: black;

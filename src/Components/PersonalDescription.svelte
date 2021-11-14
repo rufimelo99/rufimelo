@@ -14,7 +14,7 @@
         I'm very passionate about <span class="texthighlighted">Artificial Intelligence</span> and Games Development. I always try to learn more and improve each day in everything I do from programming to playing sports.
     </p>
     <p>
-        I played basketball for 10 years and so, it is one of my passions. Music is other one. Whatever I do, if i can, i enjoy having some music in the background. I also took some guitar lessons in my 12th grade. 
+        I played basketball for 10 years and so, it is one of my passions. Music is another one. Whatever I do, if i can, I enjoy having some music in the background. I also took some guitar lessons in my 12th grade. 
     </p>
     <p>
         My focus at the moment is to learn more about <span class="texthighlighted">Data Science</span> and <span class="texthighlighted">Machine Learning</span> 
