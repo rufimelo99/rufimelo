@@ -1,49 +1,55 @@
 <script>
     import ProgressBar from "@okrad/svelte-progressbar";
+    import Header from "../Components/Header.svelte";
     
   </script>
 <div class="container">
-
-    <h1 class="description">
-        Languages
-    </h1>
+    <div class="header">
+        <Header title={"Languages"} body={""}></Header>
+    </div>
     <div class="grid">
-        <!--
-        <ProgressBar
-            style='radial'
-            textSize=60
-            series={[70]}
-        ></ProgressBar>        
-          -->
-        <div>
-            <img src="assets/python.png" alt="">
-            <progress value={0.8}></progress>
-        </div>
-        <div>
-            <img src="assets/java.png" alt="">
-            <progress value={0.6}></progress>
-        </div>
-        <div>
-            <img src="assets/Csharp.svg" alt="">
-            <progress value={0.6} ></progress>
-        </div>
-        <div>
-            <img src="assets/cplus.png" alt="">
-            <progress value={0.4}></progress>
-        </div>
-        <div>
-            <img src="assets/c.png" alt="">
-            <progress value={0.4}></progress>
-        </div>
-        <div>
-            <img src="assets/js.png" alt="">
-            <progress value={0.4}></progress>
-        </div>
-        <div>
-            <img src="assets/ts.png" alt="">
-            <progress value={0.4}></progress>
-        </div>
+        <div class="row">
+            <div class="column">
+                <div>
+                    <img src="assets/python.png" alt="">
+                    <progress value={0.8}></progress>
+                </div>
+                <div>
+                    <img src="assets/java.png" alt="">
+                    <progress value={0.6}></progress>
+                </div>
+            
+            </div>
+            <div class="column">
+                <div>
+                    <img src="assets/Csharp.svg" alt="">
+                    <progress value={0.6} ></progress>
+                </div>
+                <div>
+                    <img src="assets/cplus.png" alt="">
+                    <progress value={0.4}></progress>
+                </div>
+                
+            </div>
+            <div class="column">
+                <div>
+                    <img src="assets/c.png" alt="">
+                    <progress value={0.4}></progress>
+                </div>
+                <div>
+                    <img src="assets/js.png" alt="">
+                    <progress value={0.4}></progress>
+                </div>
+                
+            </div>
+            <div class="column">
+                <div>
+                    <img src="assets/ts.png" alt="">
+                    <progress value={0.4}></progress>
+                </div>
         
+            </div>
+        </div>
     </div>
 
     
@@ -53,53 +59,42 @@
 </div>
 
   <style>
-img{
-    padding-bottom: 30%;
-}
 progress {
     width: 100%;
 }
-.grid {
-	 display: grid;
-     width: 100%;
-	 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-	 grid-gap: 1rem;
-     padding-bottom: 30%;
-}
- .grid > div {
-	 background: black;
-	 padding: 1rem;
-	 position: relative;
-}
- .grid > div::before {
-	 content: "";
-	 display: block;
-	 padding-bottom: 100%;
-}
- .grid > div img {
-	 position: absolute;
-	 max-width: 100%;
-	 top: 50%;
-	 left: 50%;
-	 transform: translate(-50%, -50%);
-}
-.description{
-    color: rgb(119, 168, 180);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    padding-right: 2px;
-    padding-bottom: 10%;
-}
-.grid-container{
-    display: grid;
-    grid-template-columns: 10% 60% 20% 10% ;
-    align-content: center;
-}
-.personalPhotoGrid{
-    text-align: center;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
 }
 
-.texthighlighted{
-    color: rgb(123, 229, 255);
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
 }
  
   </style>

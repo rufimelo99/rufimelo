@@ -27,7 +27,7 @@
 
 
 </script>
-<section id="nav-bar">
+<section id="nav-bar" style="z-index: 1;">
     <nav class="navbar main-bgcolor navbar-expand-md navbar-dark fixed-top">
       
       <button
@@ -42,15 +42,23 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <button class="bottom-btn" 
-				on:click={() => parallax.scrollTo(3, {selector: '.top-btn', duration: 4000})}>
-			Click me!
-			</button>
 			<li class="nav-item">
 				<a class="nav-link light-color logoInNav" href="#aboutme">
 					<span>About me</span>
 				</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link light-color logoInNav" href="#aboutme">
+					<span>Programming Languagues</span>
+				</a>
+			</li>
+			
+			<li class="nav-item">
+				<a class="nav-link light-color logoInNav" href="#aboutme">
+					<span>Projects</span>
+				</a>
+			</li>
+
 			<li class="nav-item">
 				<a class="nav-link light-color logoInNav" href="https://github.com/rufimelo99">
 					<img src=assets/gitWhite.png  alt="Github" width="30" height="24" class="d-inline-block align-text-top">
@@ -71,31 +79,31 @@
     </nav>
   </section>
 
-  	<Parallax sections=1.3 style="background-color: black;" bind:this={parallax}>
+  	<Parallax sections=1.2 style="background-color: black;" bind:this={parallax}>
 		  
 		<ParallaxLayer offset=0  rate=1.7 span=2>
-			<img src="assets/p0.png" alt="">
+			<img src="assets/p0.png" alt=""  class="header">
 		</ParallaxLayer>
-		<ParallaxLayer offset=0  rate=1.55 span=2>
-			<img src="assets/p1.png" alt="">
+		<ParallaxLayer offset=0  rate=1.55 span=2 >
+			<img src="assets/p1.png" alt="" class="header">
 		</ParallaxLayer>
 		<ParallaxLayer offset=0  rate=1.4 span=2>
-			<img src="assets/p2.png" alt="">
+			<img src="assets/p2.png" alt="" class="header">
 		</ParallaxLayer>
 		<ParallaxLayer offset=0  rate=1.25 span=2>
-			<img src="assets/p3.png" alt="">
+			<img src="assets/p3.png" alt="" class="header">
 		</ParallaxLayer>
 		<ParallaxLayer offset=0  rate=1.10 span=2>
-			<img src="assets/p4.png" alt="">
+			<img src="assets/p4.png" alt="" class="header">
 		</ParallaxLayer>
 		<ParallaxLayer offset=0  rate=1.0 span=2>
-			<img src="assets/p5.png" alt="">
+			<img src="assets/p5.png" alt="" class="header">
 		</ParallaxLayer>
 		<ParallaxLayer offset=0  rate=0.9 span=2>
-			<img src="assets/p6.png" alt="">
+			<img src="assets/p6.png" alt="" class="header">
 		</ParallaxLayer>
 		<ParallaxLayer offset=0  rate=0.8 span=2>
-			<img src="assets/p7.png" alt="">
+			<img src="assets/p7.png" alt="" class="header">
 		</ParallaxLayer>
 		
 		<ParallaxLayer offset=0 rate=0 span=5 class="stars" style="background-image: url('/assets/stars.svg'); background-size: cover;">	
@@ -180,5 +188,9 @@
 	.logoInNav:hover{
 		background-color: rgba(245, 245, 245, 0.527);
 	}
-	
+	.header{
+        @media (max-width: 480px) {
+            img{width: 960px;}
+        }
+	}
 </style>
