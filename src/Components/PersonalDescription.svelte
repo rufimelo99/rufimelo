@@ -45,6 +45,7 @@
         display: grid;
         grid-template-columns: 10% 60% 20% 10% ;
         align-content: center;
+        padding-top: 4vh;
     }
     .personalPhotoGrid{
         text-align: center;

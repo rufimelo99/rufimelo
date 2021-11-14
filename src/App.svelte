@@ -15,11 +15,17 @@
 	import ProgrammingLanguagues from './Components/ProgrammingLanguagues.svelte'
 	import Projects from './Components/Projects.svelte'
 
-
+	let parallax;
 	let myAppCanvas;
 
-	import AppNavSkills from './Components/AppNavSkills.svelte';
     let header ="Melo";
+
+
+	function scrollToAboutMe3() {
+		parallax.scrollTo(3, {selector: '.top-btn', duration: 4000});
+	}
+
+
 </script>
 <section id="nav-bar">
     <nav class="navbar main-bgcolor navbar-expand-md navbar-dark fixed-top">
@@ -36,7 +42,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          
+            <button class="bottom-btn" 
+				on:click={() => parallax.scrollTo(3, {selector: '.top-btn', duration: 4000})}>
+			Click me!
+			</button>
+			<li class="nav-item">
+				<a class="nav-link light-color logoInNav" href="#aboutme">
+					<span>About me</span>
+				</a>
+			</li>
 			<li class="nav-item">
 				<a class="nav-link light-color logoInNav" href="https://github.com/rufimelo99">
 					<img src=assets/gitWhite.png  alt="Github" width="30" height="24" class="d-inline-block align-text-top">
@@ -57,29 +71,30 @@
     </nav>
   </section>
 
-  	<Parallax sections=5.2 style="background-color: black;">
-		<ParallaxLayer offset=0  rate=1.7 span=1>
+  	<Parallax sections=1.3 style="background-color: black;" bind:this={parallax}>
+		  
+		<ParallaxLayer offset=0  rate=1.7 span=2>
 			<img src="assets/p0.png" alt="">
 		</ParallaxLayer>
-		<ParallaxLayer offset=0  rate=1.55 span=1>
+		<ParallaxLayer offset=0  rate=1.55 span=2>
 			<img src="assets/p1.png" alt="">
 		</ParallaxLayer>
-		<ParallaxLayer offset=0  rate=1.4 span=1>
+		<ParallaxLayer offset=0  rate=1.4 span=2>
 			<img src="assets/p2.png" alt="">
 		</ParallaxLayer>
-		<ParallaxLayer offset=0  rate=1.25 span=1>
+		<ParallaxLayer offset=0  rate=1.25 span=2>
 			<img src="assets/p3.png" alt="">
 		</ParallaxLayer>
-		<ParallaxLayer offset=0  rate=1.10 span=1>
+		<ParallaxLayer offset=0  rate=1.10 span=2>
 			<img src="assets/p4.png" alt="">
 		</ParallaxLayer>
-		<ParallaxLayer offset=0  rate=1.0 span=1>
+		<ParallaxLayer offset=0  rate=1.0 span=2>
 			<img src="assets/p5.png" alt="">
 		</ParallaxLayer>
-		<ParallaxLayer offset=0  rate=0.9 span=1>
+		<ParallaxLayer offset=0  rate=0.9 span=2>
 			<img src="assets/p6.png" alt="">
 		</ParallaxLayer>
-		<ParallaxLayer offset=0  rate=0.8 span=1>
+		<ParallaxLayer offset=0  rate=0.8 span=2>
 			<img src="assets/p7.png" alt="">
 		</ParallaxLayer>
 		
@@ -89,8 +104,8 @@
 		<ParallaxLayer offset=0.90 rate=1.2 >
 				<img src="assets/hellothere.png" alt="">
 		</ParallaxLayer>
-
-
+			
+		<!--
 		<ParallaxLayer offset=1  rate=1>
 			<div id="aboutme">
 			<PersonalDescription></PersonalDescription>
@@ -135,16 +150,19 @@
 		<ParallaxLayer offset=3  rate=1 span=4>
 			<ProgrammingLanguagues></ProgrammingLanguagues>
 			<Projects></Projects>
-		</ParallaxLayer>
+		</ParallaxLayer>-->
 	</Parallax>
 
 	<div class="container">	
 		<div class="row">
-			<!--<AppNavSkills></AppNavSkills>
-			<ProgrammingLanguagues></ProgrammingLanguagues>-->
+			<div id="aboutme">
+				<PersonalDescription></PersonalDescription>
+				</div>
 		</div>
-
-		<div></div>
+		<div class="row">
+			<ProgrammingLanguagues></ProgrammingLanguagues>
+			<Projects></Projects>
+		</div>
 
 	</div>
 
