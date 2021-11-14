@@ -2,7 +2,7 @@
     import MyModule from './Module.svelte';
     import ConnectionSVG from './ConnectionSVG.svelte'
     //Classes
-    import { Module, Port, Connection, Chart } from '../Scripts/StructureLogic';
+    import { Module, Port, Connection, Chart } from './Scripts/StructureLogic';
     import { createEventDispatcher} from 'svelte';
     const dispatch = createEventDispatcher();
 

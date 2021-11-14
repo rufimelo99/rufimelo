@@ -1,6 +1,6 @@
 <script>
     import Canvas from './Canvas.svelte'
-    import { Module, Port, Connection, Chart } from '../Scripts/StructureLogic';
+    import { Module, Port, Connection, Chart } from './Scripts/StructureLogic';
     import { createEventDispatcher} from 'svelte';
     const dispatch = createEventDispatcher();
 

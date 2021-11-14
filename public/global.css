@@ -5,11 +5,13 @@ html, body {
 }
 
 body {
-	color: rgb(148, 52, 52);
+	background-color: rgb(0, 0, 0);
+	color: rgb(144, 144, 144);
 	margin: 0;
-	padding: 8px;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	background-image: url('/assets/stars.svg'); 
+	background-size: cover;
 }
 
 a {
@@ -60,4 +62,25 @@ button:not(:disabled):active {
 
 button:focus {
 	border-color: #666;
+}
+
+#nav-bar {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.navbar {
+	padding: 0 20px !important;
+}
+
+.navbar-nav li {
+	padding: 0 0 0 20px;
+}
+
+.navbar-nav li a {
+	font-weight: 600;
+	text-transform: uppercase;
+	float: right;
+	text-align: left;
 }

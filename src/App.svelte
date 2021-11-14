@@ -1,163 +1,166 @@
 <script>
 	import { Parallax, ParallaxLayer} from 'svelte-parallax'
 	
-	let disabled = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 	
-	let parallax;
 	//https://svelte.dev/repl/1504d411044745a186004855521a89c7?version=3.35.0
-	const url = (name, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`
 	
-
+	
 	
 	import Button from './Components/Button.svelte'
 	import PersonalDescription from './Components/PersonalDescription.svelte'
-	import AppCanvas from './Components/AppCanvas.svelte'
-	import Canvas from './Components/Canvas.svelte'
+	import AppCanvas from './Components/FlowProgramming/AppCanvas.svelte'
+	import Canvas from './Components/FlowProgramming/Canvas.svelte'
 	import Header from './Components/Header.svelte'
 	import Footer from './Components/Footer.svelte'
-	
+	import ProgrammingLanguagues from './Components/ProgrammingLanguagues.svelte'
+	import Projects from './Components/Projects.svelte'
+
 
 	let myAppCanvas;
 
 	import AppNavSkills from './Components/AppNavSkills.svelte';
-
+    let header ="Melo";
 </script>
+<section id="nav-bar">
+    <nav class="navbar main-bgcolor navbar-expand-md navbar-dark fixed-top">
+      
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" />
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          
+			<li class="nav-item">
+				<a class="nav-link light-color logoInNav" href="https://github.com/rufimelo99">
+					<img src=assets/gitWhite.png  alt="Github" width="30" height="24" class="d-inline-block align-text-top">
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link light-color logoInNav" href="https://www.linkedin.com/in/rui--melo/">
+					<img src=assets/linkedinWhite.png  alt="Linkedin" width="30" height="24" class="d-inline-block align-text-top">
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link light-color logoInNav" href="https://drive.google.com/file/d/131qxcViy4HeMCobGHX6Tjh9KbQZtlpYb/view?usp=sharing">
+					<img src=assets/cv.png  alt="Resumé" width="30" height="24" class="d-inline-block align-text-top">
+				</a>
+			</li>
+        </ul>
+      </div>
+    </nav>
+  </section>
 
-<Parallax sections=2 {disabled} bind:this={parallax}>
-	<!--Stars-->	
-	<ParallaxLayer offset=0  rate=1 >
-
-	
-	
-	<!--Parallax Cover-->
-	<ParallaxLayer offset=0  rate=1.7 span=1.5>
-		<img src="assets/p0.png" alt="">
-	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.55 span=1.5>
-		<img src="assets/p1.png" alt="">
-	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.4 span=1.5>
-		<img src="assets/p2.png" alt="">
-	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.25 span=1.5>
-		<img src="assets/p3.png" alt="">
-	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.10 span=1.5>
-		<img src="assets/p4.png" alt="">
-	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=1.0 span=1.5>
-		<img src="assets/p5.png" alt="">
-	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=0.9 span=1.5>
-		<img src="assets/p6.png" alt="">
-	</ParallaxLayer>
-	<ParallaxLayer offset=0  rate=0.8 span=1.5>
-		<img src="assets/p7.png" alt="">
-	</ParallaxLayer>
-
-	<ParallaxLayer offset=-0.5 rate=0 span=6 class="stars" style="background-image: url('/assets/stars.svg'); background-size: cover;"/>	
-	</ParallaxLayer>
-
-	<ParallaxLayer offset=0.99 rate=1.2>
-		<img src="assets/hellothere.png" alt="">
-	</ParallaxLayer>
-
-
-	<!--Floating images behing (Tecnico,UA and Basketball) + About Me Sectioon-->
-	<ParallaxLayer offset=1  rate=1>
-		<PersonalDescription></PersonalDescription>
-	</ParallaxLayer>
-	<ParallaxLayer offset=1.5  rate=1.7>
-		<img src=assets/ist.png  alt='' style="width: 15%; margin-right: 70%;margin-left: 10%;">
-	</ParallaxLayer>
-	<ParallaxLayer offset=1.6  rate=1.6>
-		<img src=assets/ua.png  alt='' style="width: 25%; margin-right: 30%;margin-left: 50%;">
-	</ParallaxLayer>
-	<!------------------------------>
-
-</Parallax>
-
-	<!--CV-->
-	<Header
-		title={"Interactive CV"}
-		body={"(Feel free to move things around)"}>
-
-	</Header>
-	<AppCanvas
-	
-		class="Canvas"
-		bind:this={myAppCanvas}></AppCanvas>
-
-		<Header
-		title={"Skills"}
-		body={""}>
-		</Header>
-	<AppNavSkills>
-	</AppNavSkills>
-
-	<Footer>
-  	</Footer>
-
-<!--
-	<ParallaxLayer offset=4  rate=1.8>
-		<a href="https://github.com/rufimelo99">
-			<img 
-				src=assets/git.png 
-				alt='' 
-				style="width: 10%; margin-left: 85%;" 
-			tabindex=0
-			></a>
-	</ParallaxLayer>	
-	<ParallaxLayer offset=4.2  rate=1.1>
-		<a href="https://www.linkedin.com/in/rui--melo/">
-			<img 
-				src=assets/linkedin.png 
-				alt='' 
-				style="width: 10%; margin-left: 15%;" 
-			tabindex=0
-			></a>
-	</ParallaxLayer>
-  <ParallaxLayer offset=4.4  rate=1.8>
-	<a href="https://github.com/rufimelo99">
-		<img 
-			src=assets/cv.png 
-			alt='' 
-			style="width: 40%; margin-left: 30%; margin-right: 40%;" 
-		tabindex=0
-		></a>
-	</ParallaxLayer>
-
+  	<Parallax sections=5.2 style="background-color: black;">
+		<ParallaxLayer offset=0  rate=1.7 span=1>
+			<img src="assets/p0.png" alt="">
+		</ParallaxLayer>
+		<ParallaxLayer offset=0  rate=1.55 span=1>
+			<img src="assets/p1.png" alt="">
+		</ParallaxLayer>
+		<ParallaxLayer offset=0  rate=1.4 span=1>
+			<img src="assets/p2.png" alt="">
+		</ParallaxLayer>
+		<ParallaxLayer offset=0  rate=1.25 span=1>
+			<img src="assets/p3.png" alt="">
+		</ParallaxLayer>
+		<ParallaxLayer offset=0  rate=1.10 span=1>
+			<img src="assets/p4.png" alt="">
+		</ParallaxLayer>
+		<ParallaxLayer offset=0  rate=1.0 span=1>
+			<img src="assets/p5.png" alt="">
+		</ParallaxLayer>
+		<ParallaxLayer offset=0  rate=0.9 span=1>
+			<img src="assets/p6.png" alt="">
+		</ParallaxLayer>
+		<ParallaxLayer offset=0  rate=0.8 span=1>
+			<img src="assets/p7.png" alt="">
+		</ParallaxLayer>
 		
-	<ParallaxLayer offset=4.95 rate=0>
-		<p class="ownership" >
-			I do not own the art from Fire Watch or Codepen
-		</p>
-	</ParallaxLayer>
--->
+		<ParallaxLayer offset=0 rate=0 span=5 class="stars" style="background-image: url('/assets/stars.svg'); background-size: cover;">	
+		</ParallaxLayer>
+		
+		<ParallaxLayer offset=0.90 rate=1.2 >
+				<img src="assets/hellothere.png" alt="">
+		</ParallaxLayer>
+
+
+		<ParallaxLayer offset=1  rate=1>
+			<div id="aboutme">
+			<PersonalDescription></PersonalDescription>
+			</div>
+		</ParallaxLayer>
+		<ParallaxLayer offset=1.45  rate=1.8>
+			<img src=assets/ist.png  alt='' style="width: 15%; margin-right: 10%;margin-left: 70%;">
+		</ParallaxLayer>
+		<ParallaxLayer offset=1.7  rate=1.6>
+			<img src=assets/ua.png  alt='' style="width: 25%; margin-right: 10%;margin-left: 70%;">
+		</ParallaxLayer>
+		
+
+
+		<ParallaxLayer offset=2.1  rate=1.8>
+			<a href="https://github.com/rufimelo99">
+				<img 
+					src=assets/gitPurple.png 
+					alt='' 
+					style="width: 10%; margin-left: 85%;" 
+				tabindex=0
+				></a>
+		</ParallaxLayer>	
+		<ParallaxLayer offset=2.25  rate=1.1>
+			<a href="https://www.linkedin.com/in/rui--melo/">
+				<img 
+					src=assets/linkedin.png 
+					alt='' 
+					style="width: 10%; margin-left: 15%;" 
+				tabindex=0
+				></a>
+		</ParallaxLayer>
+		<ParallaxLayer offset=2.6  rate=1>
+		<a href="https://drive.google.com/file/d/131qxcViy4HeMCobGHX6Tjh9KbQZtlpYb/view?usp=sharing">
+			<img 
+				src=assets/cv.png 
+				alt='' 
+				style="width: 40%; margin-left: 30%; margin-right: 40%; max-width: 450px" 
+			tabindex=0
+			></a>
+		</ParallaxLayer>
+		<ParallaxLayer offset=3  rate=1 span=4>
+			<ProgrammingLanguagues></ProgrammingLanguagues>
+			<Projects></Projects>
+		</ParallaxLayer>
+	</Parallax>
+
+	<div class="container">	
+		<div class="row">
+			<!--<AppNavSkills></AppNavSkills>
+			<ProgrammingLanguagues></ProgrammingLanguagues>-->
+		</div>
+
+		<div></div>
+
+	</div>
+
+	<div id="footer">
+		<Footer></Footer>
+	</div>
+
 
 
 <style>
-
-	.ownership{
-		padding-right: 2%;
-		text-align: end;
-		text-align: right;    
-		color: rgb(119, 168, 180);
-        font-family: sans-serif;
-    
-	}
-	.Canvas{
-		width:50%;
-	}
-	:global(body) {
-		padding: 0;
-    	background-color: #000000;
-		background-image: url('/assets/stars.svg');
-		background-size: cover;
-	}
-
+	
 	img{
 		width: 100%;
 	}
-
+	.logoInNav:hover{
+		background-color: rgba(245, 245, 245, 0.527);
+	}
+	
 </style>

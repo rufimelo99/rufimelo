@@ -111,3 +111,5 @@ surge public my-project.surge.sh
 
 # Perosnal Build (also add to deploy later i think)
 npm i svelte-parallax
+npm i bootstrap
+npm i @okrad/svelte-progressbar
