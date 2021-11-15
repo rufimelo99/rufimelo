@@ -20,13 +20,15 @@
                         <h4 style="text-align: center;">Ultimatum Game in Complex Networks</h4>
                     </div>
                     <div class="row">
-                        <span>ipynb, NetworkX </span>
+                        <span class="texthighlighted">ipynb, NetworkX </span>
                     </div>
                     <div class="row">
-                        <span>Graph-theory, Socio-Economic Networks, Mathematical Economics, Network Dynamics, Game Theory   </span>
+                        <span>This project consists in studying and simulating Erdős–Rényi and Scale-Free Networks when playing the Ultimatum Game, which is a Socio-Economic Game. 
+                            It was an individual project that allowed to understand how humans react to unfair situations and their willingness to accept those.
+                        </span>
                     </div>
                     <div class="row">
-                        <span>Oct 2021 – Nov 2021</span>
+                        <span class="date">Oct 2021 – Nov 2021</span>
                     </div>
                 </div>
                 <div class="gridProject container">
@@ -39,7 +41,7 @@
                         <h4 style="text-align: center;">Ultimate Chess</h4>
                     </div>
                     <div class="row">
-                        <span >Unity, C#, ML-agents, TensorFlow </span>
+                        <span class="texthighlighted">Unity, C#, ML-agents, TensorFlow </span>
                     </div>
                     <div class="row">
                         <span>3D Chess Game with Agents that would learn through reinforcement learning. In-
@@ -49,7 +51,7 @@
                             play against itself and visualize the process using TensorFlow</span>
                     </div>
                     <div class="row">
-                        <span>Dec 2020 - Jan 2021</span>
+                        <span class="date">Dec 2020 - Jan 2021</span>
                     </div>
                 </div>
                 <div class="gridProject container">
@@ -62,13 +64,13 @@
                         <h4 style="text-align: center;">Bomberman Ai</h4>
                     </div>
                     <div class="row">
-                        <span>Pygame, python</span>
+                        <span class="texthighlighted">Pygame, python</span>
                     </div>
                     <div class="row">
                         <span>In this project, I was responsible for applying the A* algorithm and develop the decision-making for the player (bot)</span>
                     </div>
                     <div class="row">
-                        <span>Nov 2019 – Dec 2019</span>
+                        <span class="date">Nov 2019 – Dec 2019</span>
                     </div>
                 </div>
             </div>
@@ -83,7 +85,7 @@
                         <h4 style="text-align: center;">MNIST study</h4>
                     </div>
                     <div class="row">
-                        <span>ipynb, Python, TensorFlow (Keras)</span>
+                        <span class="texthighlighted">ipynb, Python, TensorFlow (Keras)</span>
                     </div>
                     <div class="row">
                         <span>Use of different neural network architectures on the test set of the famous MNIST
@@ -91,7 +93,7 @@
                             performance in order to create a paper</span>
                     </div>
                     <div class="row">
-                        <span>May 2021 – Jun 2021</span>
+                        <span class="date">May 2021 – Jun 2021</span>
                     </div>
                 </div>
                 <div class="gridProject container">
@@ -104,13 +106,13 @@
                         <h4 style="text-align: center;">ML_SimpleJump</h4>
                     </div>
                     <div class="row">
-                        <span>Unity, C#, ML-agents, TensorFlow</span>
+                        <span class="texthighlighted">Unity, C#, ML-agents, TensorFlow</span>
                     </div>
                     <div class="row">
                         <span>Small project that aimed to make a cube jump. It was done simply to learn the ML-agents package and develop the Ultimate Chess project</span>
                     </div>
                     <div class="row">
-                        <span>Dec 2020</span>
+                        <span class="date">Dec 2020</span>
                     </div>
                 </div>
 
@@ -128,7 +130,7 @@
                         <h4 style="text-align: center;">Captivity</h4>
                     </div>
                     <div class="row">
-                        <span>Unity, C#  </span>
+                        <span class="texthighlighted">Unity, C#  </span>
                     </div>
                     <div class="row">
                         <span>2D Game, co-op medieval adventure game for Windows PC with a bird’s-eye view
@@ -136,7 +138,7 @@
                             implement modules to be used when constructing levels.</span>
                     </div>
                     <div class="row">
-                        <span>Feb 2021 – Jun 2021</span>
+                        <span class="date">Feb 2021 – Jun 2021</span>
                     </div>
                 </div>
                 <div class="gridProject container">
@@ -149,13 +151,13 @@
                         <h4 style="text-align: center;">Lego Interactive</h4>
                     </div>
                     <div class="row">
-                        <span>OpenGL, C++</span>
+                        <span class="texthighlighted">OpenGL, C++</span>
                     </div>
                     <div class="row">
                         <span>Software able to simulate and interact with legos. 4 team members.</span>
                     </div>
                     <div class="row">
-                        <span>Jan 2020 – Jun 2020</span>
+                        <span class="date">Jan 2020 – Jun 2020</span>
                     </div>
                 </div>
                 
@@ -173,7 +175,7 @@
                         <h4 style="text-align: center;">Self-driving Agents Adapting to a City</h4>
                     </div>
                     <div class="row">
-                        <span>Python, Pygame </span>
+                        <span class="texthighlighted">Python, Pygame </span>
                     </div>
                     <div class="row">
                         <span>3D Simulation of a small City where uber/taxi drivers would learn where to position
@@ -182,7 +184,7 @@
                             learning algorithm.</span>
                     </div>
                     <div class="row">
-                        <span>Apr 2021 – May 2021</span>
+                        <span  class="date">Apr 2021 – May 2021</span>
                     </div>
                 </div>
                 <div class="gridProject container">
@@ -195,14 +197,14 @@
                         <h4 style="text-align: center;">Compute Flow</h4>
                     </div>
                     <div class="row">
-                        <span>Svelte, TS, npm, electron</span>
+                        <span class="texthighlighted">Svelte, TS, npm, electron</span>
                     </div>
                     <div class="row">
                         <span>Software able to provide an intuitive and interactive Interface for flow programming.
                             4 team members. I was responsible for creating the UI using Svelte and Typescript</span>
                     </div>
                     <div class="row">
-                        <span>Jan 2020 – Jun 2020</span>
+                        <span  class="date">Jan 2020 – Jun 2020</span>
                     </div>
                 </div>
             </div>
@@ -217,11 +219,14 @@
  
 
   <style>
-
     
-      span{
-          text-align: left;
-      }
+    .date{
+        font-size: 12px;
+    }
+    .texthighlighted{
+        color: rgb(123, 229, 255);
+    }
+    
 
   img{
       
