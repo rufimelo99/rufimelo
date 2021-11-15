@@ -15,6 +15,8 @@
 	import ProgrammingLanguagues from './Components/ProgrammingLanguagues.svelte'
 	import Projects from './Components/Projects.svelte'
 
+	
+
 	let parallax;
 	let myAppCanvas;
 
@@ -169,7 +171,7 @@
 		</div>
 
 	</div>
-
+	
 	<div id="footer">
 		<Footer></Footer>
 	</div>
