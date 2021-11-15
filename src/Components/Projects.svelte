@@ -52,6 +52,25 @@
                         <span>Dec 2020 - Jan 2021</span>
                     </div>
                 </div>
+                <div class="gridProject container">
+                    <div class="row">
+                        <a href="https://github.com/rufimelo99/bomberman-ai">
+                            <img src="assets/Projects/bombermanAI.JPG" alt="">
+                        </a>
+                    </div>
+                    <div class="row">
+                        <h4 style="text-align: center;">Bomberman Ai</h4>
+                    </div>
+                    <div class="row">
+                        <span>Pygame, python</span>
+                    </div>
+                    <div class="row">
+                        <span>In this project, I was responsible for applying the A* algorithm and develop the decision-making for the player (bot)</span>
+                    </div>
+                    <div class="row">
+                        <span>Nov 2019 – Dec 2019</span>
+                    </div>
+                </div>
             </div>
             <div class="column">                
                 <div class="gridProject container">
@@ -75,26 +94,26 @@
                         <span>May 2021 – Jun 2021</span>
                     </div>
                 </div>
-
                 <div class="gridProject container">
                     <div class="row">
-                        <a href="https://github.com/rufimelo99/LegoInteractive">
-                            <img src="assets/Projects/lego.JPG" alt="">
+                        <a href="https://github.com/rufimelo99/ML_SimpleJump">
+                            <img src="assets/Projects/simpleJump.png" alt="">
                         </a>
                     </div>
                     <div class="row">
-                        <h4 style="text-align: center;">Lego Interactive</h4>
+                        <h4 style="text-align: center;">ML_SimpleJump</h4>
                     </div>
                     <div class="row">
-                        <span>OpenGL, C++</span>
+                        <span>Unity, C#, ML-agents, TensorFlow</span>
                     </div>
                     <div class="row">
-                        <span>Software able to simulate and interact with legos. 4 team members.</span>
+                        <span>Small project that aimed to make a cube jump. It was done simply to learn the ML-agents package and develop the Ultimate Chess project</span>
                     </div>
                     <div class="row">
-                        <span>Jan 2020 – Jun 2020</span>
+                        <span>Dec 2020</span>
                     </div>
                 </div>
+
                 
             </div>
             <div class="column">
@@ -122,19 +141,18 @@
                 </div>
                 <div class="gridProject container">
                     <div class="row">
-                        <a href="https://github.com/DanielMoreiraPT/ComputeFlow">
-                            <img src="assets/Projects/Flow.JPG" alt="">
+                        <a href="https://github.com/rufimelo99/LegoInteractive">
+                            <img src="assets/Projects/lego.JPG" alt="">
                         </a>
                     </div>
                     <div class="row">
-                        <h4 style="text-align: center;">Compute Flow</h4>
+                        <h4 style="text-align: center;">Lego Interactive</h4>
                     </div>
                     <div class="row">
-                        <span>Svelte, TS, npm, electron</span>
+                        <span>OpenGL, C++</span>
                     </div>
                     <div class="row">
-                        <span>Software able to provide an intuitive and interactive Interface for flow programming.
-                            4 team members. I was responsible for creating the UI using Svelte and Typescript</span>
+                        <span>Software able to simulate and interact with legos. 4 team members.</span>
                     </div>
                     <div class="row">
                         <span>Jan 2020 – Jun 2020</span>
@@ -169,21 +187,22 @@
                 </div>
                 <div class="gridProject container">
                     <div class="row">
-                        <a href="https://github.com/rufimelo99/bomberman-ai">
-                            <img src="assets/Projects/bombermanAI.JPG" alt="">
+                        <a href="https://github.com/DanielMoreiraPT/ComputeFlow">
+                            <img src="assets/Projects/Flow.JPG" alt="">
                         </a>
                     </div>
                     <div class="row">
-                        <h4 style="text-align: center;">Bomberman Ai</h4>
+                        <h4 style="text-align: center;">Compute Flow</h4>
                     </div>
                     <div class="row">
-                        <span>Pygame, python</span>
+                        <span>Svelte, TS, npm, electron</span>
                     </div>
                     <div class="row">
-                        <span>In this project, I was responsible for applying the A* algorithm and develop the decision-making for the player (bot)</span>
+                        <span>Software able to provide an intuitive and interactive Interface for flow programming.
+                            4 team members. I was responsible for creating the UI using Svelte and Typescript</span>
                     </div>
                     <div class="row">
-                        <span>Nov 2019 – Dec 2019</span>
+                        <span>Jan 2020 – Jun 2020</span>
                     </div>
                 </div>
             </div>
