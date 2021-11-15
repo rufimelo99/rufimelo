@@ -140,14 +140,22 @@
 		<div class="row">
 			<div id="programming" class="sections">
 				<ProgrammingLanguagues></ProgrammingLanguagues>
-			
 			</div>
+		</div>
+		<div class="row">
 			<div id="projects" class="sections">
 				<Projects></Projects>
 			</div>
 		</div>
+		<div class="row">
+			<div class="sections">
+				<Header title={"TODO: Curricular and Profissional experience/path"}></Header>
+			</div>
+		</div>
+	
 
 	</div>
+	
 	
 		
 	<div id="footer" style="padding-top: 4vh">
