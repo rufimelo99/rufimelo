@@ -98,7 +98,7 @@
 		<ParallaxLayer offset=0 rate=0 span=5 class="stars" style="background-image: url('/assets/stars.svg'); background-size: cover;">	
 		</ParallaxLayer>
 		
-		<ParallaxLayer offset=0.90 rate=1.2 >
+		<ParallaxLayer offset=0.55 rate=1.2 >
 				<img src="assets/hellothere.png" alt="">
 		</ParallaxLayer>
 			
