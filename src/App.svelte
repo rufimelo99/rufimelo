@@ -48,13 +48,13 @@
 				</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link light-color logoInNav" href="#aboutme">
+				<a class="nav-link light-color logoInNav" href="#programming">
 					<span>Programming Languagues</span>
 				</a>
 			</li>
 			
 			<li class="nav-item">
-				<a class="nav-link light-color logoInNav" href="#aboutme">
+				<a class="nav-link light-color logoInNav" href="#projects">
 					<span>Projects</span>
 				</a>
 			</li>
@@ -168,8 +168,15 @@
 				</div>
 		</div>
 		<div class="row">
-			<ProgrammingLanguagues></ProgrammingLanguagues>
-			<Projects></Projects>
+			<div id="programming">
+				<ProgrammingLanguagues></ProgrammingLanguagues>
+			
+			</div>
+			<div id="projects">
+				
+				<Projects></Projects>
+			
+			</div>
 		</div>
 
 	</div>
