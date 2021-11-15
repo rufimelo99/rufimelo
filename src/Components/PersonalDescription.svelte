@@ -1,41 +1,60 @@
-<div class="grid-container">
-    <div></div>
-    <div class="description">
-    <h1>
-        Hi!!
-    </h1>
-    <p>
-        My name is Rui and I'm 22 years-old.
-    </p>
-    <p>
-        <span class="texthighlighted">MSc Software Engineering</span> student at <span class="texthighlighted">IST</span>, Lisbon, Portugal. 
-    </p>
-    <p>
-        I'm very passionate about <span class="texthighlighted">Artificial Intelligence</span> and Games Development.  
-        It all started in my Bachelor degree at <span class="texthighlighted">UA</span>, Aveiro, Portugal, where I was from <span class="texthighlighted">2017</span> until <span class="texthighlighted">2020</span>.
-        To be more specific, it was when I had to develop the AI for the Bomberman Game. 
-        In 2020, I decided to persue a Master degree to learn more about these subjects.
-    </p>
-    <p> 
-        I feel like I am always eager to learn more and improve each day in everything I do from programming to playing sports.
-        I played basketball for 10 years and so, it is one of my passions. Music is another one. 
-        Whatever I do, if i can, I enjoy having some music in the background. I also took some guitar lessons in my 12th grade. 
-    </p>
-    <p>
-        My focus at the moment is to learn more about <span class="texthighlighted">Data Science</span> and <span class="texthighlighted">Machine Learning</span> 
-        
-    </p>
-    <p>
-        Feel free to reach out:
-    </p>
-    <p style="text-align: center;">
-        <span class="texthighlighted">rufimelo99@gmail.com</span>
-    </p>
+<script>
+    import Header from "../Components/Header.svelte";
+    
+</script>
+<div class="container">
+    <div class="header">
+        <Header title={"About me"} body={""}></Header>
     </div>
-    <div class="personalPhotoGrid">
-        <img src="assets/Melo.jpeg" alt='' class="img-fluid">
+    <div class="grid">
+        
+        <div class="row">
+            <div class="column">
+                <img src="assets/Melo.jpeg" alt='' class="img-fluid">
+                
+            </div>
+            <div class="column">
+                <p>
+                    My name is Rui and I'm 22 years-old.
+                </p>
+                <p>
+                    <span class="texthighlighted">MSc Software Engineering</span> student at <span class="texthighlighted">IST</span>, Lisbon, Portugal. 
+                </p>
+                <p>
+                    I'm very passionate about <span class="texthighlighted">Artificial Intelligence</span> and Games Development.  
+                    It all started in my Bachelor degree at <span class="texthighlighted">UA</span>, Aveiro, Portugal, where I was from <span class="texthighlighted">2017</span> until <span class="texthighlighted">2020</span>.
+                    To be more specific, it was when I had to develop the AI for the Bomberman Game. 
+                    In 2020, I decided to persue a Master degree to learn more about these subjects.
+                </p>
+                <p> 
+                    I feel like I am always eager to learn more and improve each day in everything I do from programming to playing sports.
+                    I played basketball for 10 years and so, it is one of my passions. Music is another one. 
+                    Whatever I do, if i can, I enjoy having some music in the background. I also took some guitar lessons in my 12th grade. 
+                </p>
+                <p>
+                    My focus at the moment is to learn more about <span class="texthighlighted">Data Science</span> and <span class="texthighlighted">Machine Learning</span> 
+                    
+                </p>
+                <p>
+                    Feel free to reach out:
+                </p>
+                <p style="text-align: center;">
+                    <span class="texthighlighted">rufimelo99@gmail.com</span>
+                </p>
+            </div>
+
+            
+        </div>
+        
     </div>
 </div>
+    
+    
+    
+   
+    
+
+
 <style>
     p{
         padding-top:1vh;
@@ -59,4 +78,62 @@
     .texthighlighted{
         color: rgb(123, 229, 255);
     }
+
+    
+
+.Project{
+    
+  margin-left: auto;
+  margin-right: auto;
+}
+img{
+    
+  margin-left: 10%;
+  margin-right: 10%;
+}
+progress{  
+  margin-left: 15%;
+  margin-right: 15%;
+
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 50%;
+  max-width: 50%;
+  padding: 0 4px;
+  padding-top: 2vh;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 70%;
+}
+.column progress {
+    width: 50%;
+}
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+ 
 </style>

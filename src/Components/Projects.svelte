@@ -5,7 +5,7 @@
   </script>
 <div class="container">
     <div class="header">
-        <Header title={"Projects (section to be edited )"} body={""}></Header>
+        <Header title={"Projects"} body={""}></Header>
     </div>
     <div class="grid">
         <div class="row">

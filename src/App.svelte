@@ -60,14 +60,11 @@
 					<img src=assets/linkedinWhite.png  alt="Linkedin" width="30" height="24" class="d-inline-block align-text-top">
 				</a>
 			</li>
-			<li class="nav-item">
-				<a class="nav-link light-color logoInNav" href="https://drive.google.com/file/d/131qxcViy4HeMCobGHX6Tjh9KbQZtlpYb/view?usp=sharing">
-					<img src=assets/cv.png  alt="Resumé" width="30" height="24" class="d-inline-block align-text-top">
-				</a>
-			</li>
+			
         </ul>
       </div>
     </nav>
+
   </section>
 
   	<Parallax sections=1.2 style="background-color: black;" bind:this={parallax}>
@@ -105,81 +102,64 @@
 		</ParallaxLayer>
 			
 		<!--
-		<ParallaxLayer offset=1  rate=1>
-			<div id="aboutme">
-			<PersonalDescription></PersonalDescription>
-			</div>
-		</ParallaxLayer>
-		<ParallaxLayer offset=1.45  rate=1.8>
-			<img src=assets/ist.png  alt='' style="width: 15%; margin-right: 10%;margin-left: 70%;">
-		</ParallaxLayer>
-		<ParallaxLayer offset=1.7  rate=1.6>
-			<img src=assets/ua.png  alt='' style="width: 25%; margin-right: 10%;margin-left: 70%;">
-		</ParallaxLayer>
-		
-
-
-		<ParallaxLayer offset=2.1  rate=1.8>
+		<ParallaxLayer offset=0.3  rate=1.8>
 			<a href="https://github.com/rufimelo99">
 				<img 
 					src=assets/gitPurple.png 
 					alt='' 
-					style="width: 10%; margin-left: 85%;" 
+					style="width: 10%; margin-left: 65%; min-width: 80px" 
 				tabindex=0
 				></a>
 		</ParallaxLayer>	
-		<ParallaxLayer offset=2.25  rate=1.1>
+		<ParallaxLayer offset=0.4  rate=1.1>
 			<a href="https://www.linkedin.com/in/rui--melo/">
 				<img 
 					src=assets/linkedin.png 
 					alt='' 
-					style="width: 10%; margin-left: 15%;" 
+					style="width: 10%; margin-left: 15%; min-width: 80px" 
 				tabindex=0
 				></a>
 		</ParallaxLayer>
-		<ParallaxLayer offset=2.6  rate=1>
+		<ParallaxLayer offset=0.9  rate=1.4>
 		<a href="https://drive.google.com/file/d/131qxcViy4HeMCobGHX6Tjh9KbQZtlpYb/view?usp=sharing">
 			<img 
 				src=assets/cv.png 
 				alt='' 
-				style="width: 40%; margin-left: 30%; margin-right: 40%; max-width: 450px" 
+				style="width: 20%; margin-left: 60%; margin-right: 20%; min-width: 100px" 
 			tabindex=0
 			></a>
-		</ParallaxLayer>
-		<ParallaxLayer offset=3  rate=1 span=4>
-			<ProgrammingLanguagues></ProgrammingLanguagues>
-			<Projects></Projects>
 		</ParallaxLayer>-->
 	</Parallax>
 
 	<div class="container">	
 		<div class="row">
-			<div id="aboutme">
+			<div id="aboutme"  class="sections">
 				<PersonalDescription></PersonalDescription>
 				</div>
 		</div>
 		<div class="row">
-			<div id="programming">
+			<div id="programming" class="sections">
 				<ProgrammingLanguagues></ProgrammingLanguagues>
 			
 			</div>
-			<div id="projects">
-				
+			<div id="projects" class="sections">
 				<Projects></Projects>
-			
 			</div>
 		</div>
 
 	</div>
 	
-	<div id="footer">
+		
+	<div id="footer" style="padding-top: 4vh">
 		<Footer></Footer>
 	</div>
 
 
 
 <style>
-	
+	.sections{
+		padding-top: 6vh;
+	}
 	img{
 		width: 100%;
 	}

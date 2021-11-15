@@ -5,7 +5,7 @@
   </script>
 <div class="container">
     <div class="header">
-        <Header title={"Languages"} body={""}></Header>
+        <Header title={"Programming Languages"} body={""}></Header>
     </div>
     <div class="grid">
         <div class="row">
@@ -81,9 +81,7 @@ progress{
   flex-wrap: wrap;
   padding: 0 4px;
 }
-.container {
-  padding-top: 8vh;
-}
+
 
 /* Create four equal columns that sits next to each other */
 .column {
