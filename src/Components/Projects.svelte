@@ -20,10 +20,13 @@
                         <h4 style="text-align: center;">Ultimatum Game in Complex Networks</h4>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">ipynb, NetworkX | Graph-theory, Socio-Economic Networks, Mathematical Economics, Network Dynamics, Game Theory   </span>
+                        <span>ipynb, NetworkX </span>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">Oct 2021 – Nov 2021</span>
+                        <span>Graph-theory, Socio-Economic Networks, Mathematical Economics, Network Dynamics, Game Theory   </span>
+                    </div>
+                    <div class="row">
+                        <span>Oct 2021 – Nov 2021</span>
                     </div>
                 </div>
                 <div class="gridProject container">
@@ -34,10 +37,13 @@
                         <h4 style="text-align: center;">Captivity</h4>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">Unity, C# | 2D co-op Medieval Game  </span>
+                        <span>Unity, C#  </span>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">Feb 2021 – Jun 2021</span>
+                        <span>2D co-op Medieval Game  </span>
+                    </div>
+                    <div class="row">
+                        <span>Feb 2021 – Jun 2021</span>
                     </div>
                 </div>
             
@@ -51,10 +57,13 @@
                         <h4 style="text-align: center;">Self-driving Agents Adapting to a City</h4>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">Python, Pygame | Reinforcement Learning (Q-learning), Autonomous Agents, Multi-Agent Systems  </span>
+                        <span>Python, Pygame </span>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">Apr 2021 – May 2021</span>
+                        <span>Reinforcement Learning (Q-learning), Autonomous Agents, Multi-Agent Systems  </span>
+                    </div>
+                    <div class="row">
+                        <span>Apr 2021 – May 2021</span>
                     </div>
                 </div>
                 <div class="gridProject container">
@@ -65,10 +74,13 @@
                         <h4 style="text-align: center;">MNIST study</h4>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">ipynb, Python, TensorFlow (Keras) | Deep Learning (Feedforward and Convolutional Neural Networks)</span>
+                        <span>ipynb, Python, TensorFlow (Keras)</span>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">May 2021 – Jun 2021</span>
+                        <span>Deep Learning (Feedforward and Convolutional Neural Networks)</span>
+                    </div>
+                    <div class="row">
+                        <span>May 2021 – Jun 2021</span>
                     </div>
                 </div>
                 
@@ -82,10 +94,13 @@
                         <h4 style="text-align: center;">Compute Flow</h4>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">Svelte, TS, npm, electron | UI/UX</span>
+                        <span>Svelte, TS, npm, electron</span>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">Jan 2020 – Jun 2020</span>
+                        <span>UI/UX</span>
+                    </div>
+                    <div class="row">
+                        <span>Jan 2020 – Jun 2020</span>
                     </div>
                 </div>
                 
@@ -100,10 +115,13 @@
                         <h4 style="text-align: center;">Ultimate Chess</h4>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">Unity, C#, ML-agents, TensorFlow | Reinforcement Learning</span>
+                        <span >Unity, C#, ML-agents, TensorFlow </span>
                     </div>
                     <div class="row">
-                        <span style="text-align: center;">Dec 2020 - Jan 2021</span>
+                        <span>Reinforcement Learning</span>
+                    </div>
+                    <div class="row">
+                        <span>Dec 2020 - Jan 2021</span>
                     </div>
                 </div>
                 
@@ -120,23 +138,16 @@
  
 
   <style>
+      span{
+          text-align: left;
+      }
 
-.Project{
-    
-    margin-left: auto;
-    margin-right: auto;
-  }
   img{
       
     margin-left: 25%;
     margin-right: 25%;
   }
-  progress{  
-    margin-left: 25%;
-    margin-right: 25%;
-  
-  }
-  
+
   .row {
     display: flex;
     flex-wrap: wrap;
@@ -152,6 +163,7 @@
     max-width: 25%;
     padding: 0 4px;
     padding-top: 2vh;
+    
   }
   
   .column img {
@@ -160,9 +172,7 @@
     width: 50%;
     height: 50%;
   }
-  .column progress {
-      width: 50%;
-  }
+
   /* Responsive layout - makes a two column-layout instead of four columns */
   @media screen and (max-width: 800px) {
     .column {
