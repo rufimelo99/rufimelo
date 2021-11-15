@@ -28,18 +28,7 @@
 
 </script>
 <section id="nav-bar" style="z-index: 1;">
-    <nav class="navbar main-bgcolor navbar-expand-md navbar-dark fixed-top">
-      
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" />
-      </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
 			<li class="nav-item">
