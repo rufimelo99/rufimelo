@@ -239,7 +239,6 @@
     display: flex;
     flex-wrap: wrap;
     padding: 0 4px;
-    background-color: rgba(245, 245, 245, 0.02);
   }
   .container {
     padding-top: 1vh;
