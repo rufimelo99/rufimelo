@@ -4,7 +4,7 @@
 	import MainPage from './views/MainPage.svelte';
 	export let name;
   	export let url = "";
-    //import ParallaxBackground from "components/Parallax/ParallaxBackground.svelte";
+    
 </script>
 
 <Tailwindcss />
