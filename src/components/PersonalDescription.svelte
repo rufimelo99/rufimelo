@@ -15,7 +15,7 @@
             I'm very passionate about <span class="text-gray-300">Artificial Intelligence</span> and Games Development.  
             It all started in my Bachelor degree at <span class="text-gray-300">UA</span>, Aveiro, Portugal, where I was from <span class="text-gray-300">2017</span> until <span  class="text-gray-300">2020</span>.
             To be more specific, it was when I had to develop the AI for the Bomberman Game. 
-            In 2020, I decided to persue a Master degree to learn more about these subjects.
+            In 2020, I decided to pursue a Master degree to learn more about these subjects.
         </p>
         <p class="mt-4 text-xl leading-relaxed text-gray-400">
           
