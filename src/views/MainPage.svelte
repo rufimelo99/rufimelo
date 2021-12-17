@@ -17,6 +17,8 @@
 <ParallaxBackground />
 
 <section class="bg-black">
+  
+    <!--Personal Description-->
     <section class="header relative pt-16 items-center bg-black flex h-screen max-h-860-px">
       <div class="container mx-auto items-center flex flex-wrap">
         <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
@@ -77,8 +79,8 @@
       
       <p class="text-gray-200">Cool photo here pls</p>
     </section>
-  
-    <section class="mt-48 md:mt-40 pb-40 relative bg-blueGray-700">
+    <!--tools-->
+    <section class="mt-48 md:mt-40 pb-40 relative bg-sky-700">
       <div
         class="-mt-20 top-0 bottom-auto left-0 right-0 w-full absolute h-20 "
         style="transform: translateZ(0);"
@@ -222,6 +224,7 @@
     </section>
   
   
+    <!--Projects-->
     <section class="block relative z-1 bg-blueGray-800">
       <div class="container mx-auto">
         <div class="justify-center flex flex-wrap">
