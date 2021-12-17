@@ -53,8 +53,8 @@
           </div>
         </div>
       </div>
-      <div class="md:w-4/12 lg:w-6/12 xl:w-6/12 px-4">
-        <img src="assets/img/me.jpg" alt="">
+      <div class="md:w-4/12 lg:w-6/12 xl:w-6/12 px-4 ">
+        <img src="assets/img/me.jpg" alt="" class="shadow-lg rounded-lg">
       <div>
     </div>
     
