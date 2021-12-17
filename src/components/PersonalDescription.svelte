@@ -53,8 +53,10 @@
           </div>
         </div>
       </div>
+      <div class="md:w-4/12 lg:w-6/12 xl:w-6/12 px-4">
+        <img src="assets/img/me.jpg" alt="">
+      <div>
     </div>
     
-    
-    <p class="text-gray-200">Cool photo here pls</p>
   </section>
+

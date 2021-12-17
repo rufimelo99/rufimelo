@@ -3,6 +3,32 @@
       <div class="justify-center flex flex-wrap">
         <div class="w-full lg:w-12/12 px-4 -mt-24">
           <div class="flex flex-wrap">
+            
+            <div class="w-full lg:w-4/12 px-4">
+
+              <a href="https://fenixds.itch.io/clipping-mask">
+                <div
+                  class="hover:-mt-4 relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg ease-linear transition-all duration-150"
+                >
+                  <img
+                    alt="..."
+                    class="align-middle border-none max-w-full h-auto rounded-lg"
+                    src="assets/img/Projects/ClippingMask.JPG"
+                  />
+                  <p class="px-2 py-2 text-gray-300 font-bold">Clipping Mask</p>
+                  <p class="px-2 py-2 text-gray-300 font-thin">Unity</p>
+                  <p class="px-2 py-2 text-gray-300 leading-relaxed ">2D Puzzle Platformer game for Game Design. 4 team members. 
+                    Clipping Mask is a 2D Puzzle Platformer in which the player must use a combination of movement skills, alongside the “Clipping Mask” ability in order to progress in each level. 
+                    This skill allows them to copy properties from their environment and paste them into others, effectively altering the landscape to their advantage.
+                    Properties are represented through the usage of colour schemes which taint the interactable object (i.e platforms, obstacles, enemies and so on) in the environment. 
+                    For example, blue coloured objects allow the player to stand on them, whilst red coloured objects kill the player on collision.
+                  </p>
+                  <p class="px-2 py-2 text-gray-300 font-extrathin">Oct 2021 – Nov 2021</p>
+                  
+                  </div>
+                
+              </a>
+            </div>
             <div class="w-full lg:w-4/12 px-4">
 
               <a href="https://github.com/rufimelo99/UltimatumGame">
