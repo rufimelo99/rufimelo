@@ -1,5 +1,5 @@
 <section class="header relative pt-16 items-center bg-black flex h-screen max-h-860-px">
-    <div class="container mx-auto items-center flex flex-wrap">
+    <div class="container mx-auto items-center flex flex-wrap-reverse">
       <div class="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
         <div class="pt-32 sm:pt-0">
           <h2 class="font-semibold text-4xl text-gray-400">
