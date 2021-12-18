@@ -18,7 +18,7 @@
 
 <IndexNavbar />
 <ParallaxBackground />
-<section class="bg-black flex flex-wrap">
+<section class="bg-black">
     <!--Personal Description-->
     <PersonalDescription />
     <!--tools-->
